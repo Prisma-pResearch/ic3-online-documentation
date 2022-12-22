@@ -1,0 +1,26 @@
+.featureProjectBox {
+    display: flex;
+    margin-right: 1.8rem;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+    width: 16rem;
+    height: 12rem;
+    text-align: center;
+    border: 2px;
+    border-radius: 3px;
+    font-weight: 500;
+    justify-content: center;
+    margin-top: 1.5rem;
+    text-decoration-line: none;
+    border: 2px solid rgba(109, 100, 100, 0.492);
+}
+
+
+
+
+.featureProjectBox:hover {
+    background-color: #ddd;
+    font-weight: 800;
+}
+

@@ -1,0 +1,64 @@
+@mixin media($queries, $orientation: null) {
+	$is-error-free: __media-blender-validate-breakpoints($queries);
+	$retina-index: index($queries, retina);
+  
+	@if $retina-index {
+	  $queries: __media-blender-remove-nth($queries, $retina-index);
+	}
+  
+	// resolve up/down syntax for mobile-first and desktop-first
+	$queries: __media-blender-expand($queries);
+  
+	//sort the queries for correct or-list (comma-separated) generation,
+	// and remove duplicates
+	$queries: __media-blender-sort-queries($queries);
+	$queries: __media-blender-remove-duplicate-queries($queries);
+	$query-lists: __media-blender-join-queries($queries);
+  
+	$breakpoint-lists: ();
+  
+	@each $query in $query-lists {
+	  $skip-first-max: false;
+  
+	  //if the 0 survived, it means we must start with max to get correct results
+	  //also remove the 0, makes no sense to use it in media queries
+	  @if index($query, 0) {
+		$skip-first-max: true;
+		$query: __media-blender-remove-element($query, 0);
+	  }
+  
+	  //get the query string from breakpoint-list
+	  $query: __media-blender-get-query($query, $skip-first-max);
+  
+	  //if the query is empty it means all items in list
+	  //were duplicates, meaning all were selected
+	  @if $query == '' {
+		@if $orientation != null {
+		  $query: '(orientation: #{$orientation})';
+		}
+  
+		@else {
+		  $query: all;
+		}
+	  }
+  
+	  @else if $orientation != null {
+		$query: '#{$query} and (orientation: #{$orientation})';
+	  }
+  
+	  $breakpoint-lists: append($breakpoint-lists, $query);
+	}
+  
+	//If retina was found in the query list
+	@if $retina-index {
+	  $breakpoint-lists: __media-blender-add-retina($breakpoint-lists);
+	}
+  
+	$breakpoint-lists: __media-blender-join-list($breakpoint-lists, ', ');
+  
+	//actual media query - @content is were user content goes
+	@media #{$breakpoint-lists} {
+	  @content;
+	}
+  }
+  
