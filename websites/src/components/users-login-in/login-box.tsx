@@ -2,38 +2,61 @@ import { LockOutlined, UserOutlined } from '@ant-design/icons';
 import { Button, Checkbox, Form, Input } from 'antd';
 import React from 'react';
 import axios from 'axios';
+// import  {useNavigate} from 'react-router-dom'
 import styles from './styles.module.css'
-
+import { useStore } from '../../stores';
+import { observer } from 'mobx-react-lite'
 
 const LoginBox = () => {
-    const onFinish = (values: any) => {
-        console.log('Received values of form: ', values);
-        const xhr = new XMLHttpRequest();
-        xhr.open('POST', 'http://127.0.0.1:50000/user/login');
-        xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-        xhr.send(`username=${values.username}&password=${values.password}`);
+    const {loginStore} = useStore()
+    // const navigate = useNavigate()
+    const onFinish =  async(values: any) => {
 
-        xhr.onreadystatechange = function () {
-            if (xhr.readyState === 4) {
-                if (xhr.status >= 200 && xhr.status < 300) {
+        // console.log(values)
+       
+        // loginStore.getToken(values)
+        await loginStore.getToken({
+            username: values.username,
+            password: values.password,
 
-                    console.log(xhr.status);
-                    // console.log(xhr.statusText); 
-                    // console.log(xhr.getAllResponseHeaders()); 
-                    // console.log(xhr.response); 
-                    alert(`login in user ${values.username} successfully!`)
+        })
+        console.log("something is here")
+        console.log(loginStore.token)
+        // navigate('/',{replace:true})
+        
 
-                } else {
-                    console.log('error');
-                    console.log(xhr.status);
-                    alert("Please check your username or password!");
-                }
-            }
+    }
+    // const onFinish = (values: any) => {
+    //     console.log('Received values of form: ', values);
+    //     const xhr = new XMLHttpRequest();
+    //     xhr.open('POST', 'http://127.0.0.1:50000/user/login');
+    //     xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+    //     xhr.send(`username=${values.username}&password=${values.password}`);
 
-        }
+    //     xhr.onreadystatechange = function () {
+    //         if (xhr.readyState === 4) {
+    //             if (xhr.status >= 200 && xhr.status < 300) {
+
+    //                 console.log(xhr.status);
+    //                 // console.log(xhr.statusText); 
+    //                 // console.log(xhr.getAllResponseHeaders()); 
+    //                 // console.log(xhr.response); 
+    //                 alert(`login in user ${values.username} successfully!`)
+
+    //             } else {
+    //                 console.log('error');
+    //                 console.log(xhr.status);
+    //                 alert("Please check your username or password!");
+    //             }
+    //         }
+
+    //     }
 
 
-    };
+    // };
+    const onFinishFailed = (errorInfo:any)=>{
+        console.log(errorInfo)
+    }
 
 
 
@@ -47,6 +70,7 @@ const LoginBox = () => {
                         remember: true,
                     }}
                     onFinish={onFinish}
+                    onFinishFailed = {onFinishFailed}
                     style={{ display: 'grid', width: '18rem', height: '15rem' }}
 
                 >
