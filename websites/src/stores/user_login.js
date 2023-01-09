@@ -26,10 +26,7 @@ class LoginStore {
 
         // use token to store in memory
         this.token = res.data.token
-        console.log('token is ', res.data.token)
-        // console.log(res)
 
-        //store in loginStore
         setToken(this.token)
 
     }
