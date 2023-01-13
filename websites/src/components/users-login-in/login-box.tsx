@@ -2,10 +2,10 @@ import { LockOutlined, UserOutlined } from '@ant-design/icons';
 import { Button, Checkbox, Form, Input } from 'antd';
 import React from 'react';
 import axios from 'axios';
-// import  {useNavigate} from 'react-router-dom'
-import styles from './styles.module.css'
+// import  {useNavigate} from 'react-router-dom';
+import styles from './styles.module.css';
 import { useStore } from '../../stores';
-import { observer } from 'mobx-react-lite'
+import { observer } from 'mobx-react-lite';
 
 const LoginBox = () => {
     const {loginStore} = useStore()
@@ -19,7 +19,7 @@ const LoginBox = () => {
 
         })
         console.log(loginStore.token)
-        // navigate("/");
+        // navigate("http://localhost:3000");
 
 
     }
