@@ -66,7 +66,7 @@ const ExcelFile = () => {
         </tbody>
       </table>
 
-      <ParseExcel></ParseExcel>
+      
     </div>
   )
 }
