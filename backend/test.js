@@ -3,17 +3,26 @@
 
 const xlsx = require('xlsx')
 
-let filePath = "./TextExcel.xlsx"
+let filePath = "./TextExcel2.xlsx"
 
 const wb = xlsx.readFile(filePath)
 const ws = wb.Sheets['Sheet2']
-ws.eachRow(function(row, rowNumber) {
-    console.log(`Row ${rowNumber}:`);
-    row.eachCell(function(cell, colNumber) {
-        console.log(`  Cell ${colNumber}: ${cell.value}`);
-    });
-});
 
 const data = xlsx.utils.sheet_to_json(ws)
 
-console.log(data)
+let jsonData = []
+// get first row
+let firstRow = Object.keys(data[0])
+jsonData.push(firstRow)
+
+// get rest rows
+
+data.map(row => {
+    
+    let value = Object.values(row)
+    jsonData.push(value)
+   
+})
+
+
+console.log(jsonData)
