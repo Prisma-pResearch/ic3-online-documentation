@@ -3,9 +3,10 @@ import React from 'react'
 import PdfLocal from '../../components/files-pdf/pdf-local'
 
 const PdfLocalPage = () => {
+    const  Pdffile =  './elephant.pdf'
   return (
     <div>
-        <PdfLocal></PdfLocal>
+        <PdfLocal Pdffile={ Pdffile}></PdfLocal>
     </div>
   )
 }

@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { read, utils, writeFile } from 'xlsx';
-import ParseExcel from '../../components/files-excel/parseExcel';
+import ParseExcel from '../../components/files-excel/excel-local';
 import { DownloadOutlined } from '@ant-design/icons';
 import { Button, Radio, Space, Divider, UploadProps, Upload } from 'antd';
 import { UploadOutlined } from '@ant-design/icons';
