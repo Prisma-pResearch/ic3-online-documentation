@@ -4,7 +4,9 @@ import ParseExcel from '../../components/files-excel/parseExcel'
 const ExcelFileLocal = () => {
   return (
     <div>
-      <ParseExcel></ParseExcel>
+      <ParseExcel>
+        
+      </ParseExcel>
     </div>
   )
 }
