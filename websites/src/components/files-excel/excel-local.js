@@ -5,12 +5,13 @@ import { read, utils, writeFile, readFile, XLSX } from 'xlsx';
 
 const ParseExcel = () => {
   // const [fileContent, setFileContent] = useState(null);
-  // const fileData = readFile("./testExcel");
+  const fileData = readF("./test.xlsx");
+
   // console.log(fileData)
   // const fs = require('fs-extra')
-  const XLSX = require('xlsx');
+ 
   // const data = fs.readFileSync('./test.xlsx');
-  const workbook = read(data, { type: 'buffer' });
+ 
 
 
   return (
