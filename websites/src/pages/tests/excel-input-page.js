@@ -4,11 +4,12 @@ import ParseExcel from '../../components/files-excel/excel-local';
 import { DownloadOutlined } from '@ant-design/icons';
 import { Button, Radio, Space, Divider, UploadProps, Upload } from 'antd';
 import { UploadOutlined } from '@ant-design/icons';
+import { readFile } from 'fs';
 
 const ExcelFile = () => {
   const [fileName, setFileName] = useState(null);
   const [colums, setColums] = useState([[]]);
-  const [file, setFile] = useState(null);
+  // const [file, setFile] = useState(null);
 
 
   const handleFile = async (e) => {
@@ -16,12 +17,16 @@ const ExcelFile = () => {
     const data = await file.arrayBuffer();
 
     setFileName(file.name);
+    console.log("test")
     const workbook = read(data);
     const worksheet = workbook.Sheets[workbook.SheetNames[0]];
     const jsonData = utils.sheet_to_json(worksheet, { header: 1 });
-    setColums(jsonData);
-    setFile(jsonData);
     console.log(jsonData);
+    setColums(jsonData);
+    // setFile(jsonData);
+
+   
+    
   }
 
   const outputFile = () => {
