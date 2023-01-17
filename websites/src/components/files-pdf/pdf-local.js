@@ -5,13 +5,14 @@ import 'react-pdf/dist/esm/Page/AnnotationLayer.css';
 pdfjs.GlobalWorkerOptions.workerSrc = `//unpkg.com/pdfjs-dist@${pdfjs.version}/build/pdf.worker.min.js`;
 import styles from './styles.module.css';
 
-
 const PdfLocal = ({Pdffile}) => {
+    
     const [numPages, setNumPages] = useState(null);
     const [pageNumber, setPageNumber] = useState(1);
     function onDocumentLoadSuccess({ numPages }) {
         setNumPages(numPages);
     }
+    console.log(Pdffile)
     const nextPageButton = () => {
         setPageNumber(pageNumber + 1);
     }

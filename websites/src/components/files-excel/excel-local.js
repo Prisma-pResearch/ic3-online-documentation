@@ -1,11 +1,12 @@
 import React, { useState } from 'react'
-// import * as fs from 'fs';
+// import  fs  from  'fs' 
+// const  fs  =  require ( 'fs-extra' )
 import excelfile from './test.xlsx'
 import { read, utils, writeFile, readFile, XLSX } from 'xlsx';
 
 const ParseExcel = () => {
   // const [fileContent, setFileContent] = useState(null);
-  const fileData = readF("./test.xlsx");
+  // const fileData = fs.readFile("./test.xlsx");
 
   // console.log(fileData)
   // const fs = require('fs-extra')

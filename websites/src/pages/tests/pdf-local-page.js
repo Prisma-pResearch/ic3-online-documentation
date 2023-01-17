@@ -1,12 +1,13 @@
 import { Button } from 'antd'
 import React from 'react'
 import PdfLocal from '../../components/files-pdf/pdf-local'
+import PdffileNew from './elephant.pdf'
 
 const PdfLocalPage = () => {
-    const  Pdffile =  './elephant.pdf'
+    
   return (
     <div>
-        <PdfLocal Pdffile={ Pdffile}></PdfLocal>
+        <PdfLocal Pdffile={PdffileNew}></PdfLocal>
     </div>
   )
 }
