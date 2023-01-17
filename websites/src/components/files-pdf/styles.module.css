@@ -11,3 +11,10 @@
     font-size: 0.8rem;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
+
+.buttons {
+    display: flex;
+    justify-content: space-around;
+    max-width: 40rem;
+    min-width: 20rem;
+}

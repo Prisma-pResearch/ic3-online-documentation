@@ -34,7 +34,7 @@ const PdfLocal = ({Pdffile}) => {
             <p  className={styles.pageNumber}>
                 Page {pageNumber} of {numPages}
             </p>
-            <div>
+            <div className={`${styles.buttons}`}>
             {pageNumber !== 1 && <Button onClick={previousPageButton}>Previous Page</Button>}
             {pageNumber !== numPages && <Button onClick={nextPageButton}>Next Page</Button>}
 
