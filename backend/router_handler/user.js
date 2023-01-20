@@ -48,7 +48,7 @@ exports.login = (req, res) => {
             return res.cc(err)
         }
         if (results.length !== 1) {
-            return res.cc('uery result !== 1, login fails')
+            return res.cc('Query result !== 1, login fails')
         }
         const comparePassword = bcrypt.compareSync(userinfo.password, results[0].password)
         if(!comparePassword) return res.cc('password error')

@@ -36,6 +36,7 @@
     "react-pdf": "^6.2.2",
     "react-router-dom": "^6.6.1",
     "sass": "^1.56.1",
+    "start": "^5.1.0",
     "xlsx": "^0.18.5"
   },
   "devDependencies": {
