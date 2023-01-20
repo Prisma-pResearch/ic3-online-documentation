@@ -3,12 +3,13 @@
 
 :root{
     --excel-table-padding: 0.2rem;
+    box-sizing: border-box;
 }
 .table {
     display: flex;
     flex-direction: column;
     margin: 20px;
-    min-width: 40rem;
+    min-width: 457rem;
 
 }
 /* The title of the table */
@@ -32,6 +33,7 @@
 
 .subTable {
     margin-left: 2rem;
+    margin-right: 1rem;
 }
 
 /* The first row */
@@ -84,7 +86,8 @@
 
 /* The Table name cell */
 .cellTable_name{
-    min-width: 6rem;
+    width: 15rem;
+    min-width: 10rem;
     font-size: 14px;
     display: flex;
     flex-direction: column;
@@ -106,7 +109,7 @@
 }
 
 .cellDiscription {
-width: 40rem;
+width: 80rem;
 font-size: 14px;
 line-height: 1rem;
 
@@ -117,7 +120,9 @@ line-height: 1rem;
 .cellAction {
     width: 8rem;
     /* background-color: red; */
-    min-width: 5rem;
+    min-width: 8rem;
+    /* max-width: 8rem; */
+
 }
 
 .cellActionTag {
@@ -131,7 +136,7 @@ line-height: 1rem;
 
 .cellTags {
     width: 8rem;
-    min-width: 5rem;
+    min-width: 8rem;
 }
 
 /* each Tag */
