@@ -32,11 +32,10 @@ const ExcelRow = ({ table }) => {
           </div>
           <div className={`${styles.cell} ${styles.centent_cell} ${styles.cellColumn_Type}`}>{row.Column_Type}</div>
           <div className={`${styles.cell} ${styles.centent_cell} ${styles.cellRequired}`}>{row.Required}</div>
-          <div className={`${styles.cell} ${styles.centent_cell} ${styles.cellIndicator}`}>{row.indicators.map(indicator => <ExcelTag Tag={indicator}></ExcelTag>)}</div>
+          <div className={`${styles.cell} ${styles.centent_cell} ${styles.cellIndicator}`}>{row.Indicators.map(indicator => <ExcelTag Tag={indicator}></ExcelTag>)}</div>
           <div className={`${styles.cell} ${styles.centent_cell} ${styles.cellAction}`}>
-        {console.log('你好')}
        
-            {row.data != null && <Button className={`${styles.cellActionTag}`} onClick={clickTheButton}>Show Statistics</Button>}
+            {row.Data != null && <Button className={`${styles.cellActionTag}`} onClick={clickTheButton}>Show Statistics</Button>}
           </div>
         </div>
 
@@ -44,7 +43,7 @@ const ExcelRow = ({ table }) => {
       {console.dir(row)}
 
       {/* <div className={`${styles.content} ${styles.row} ${styles.cellTags}`}>{row.tags.map(tag => <ExcelTag Tag={tag}></ExcelTag>)}</div> */}
-      {showSub && <div className={`${styles.subTable}`}> {row.data }</div>}
+      {showSub && <div className={`${styles.subTable}`}> {row.Data }</div>}
 
 
     </div>
