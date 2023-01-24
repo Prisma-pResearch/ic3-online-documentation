@@ -19,19 +19,19 @@ const ExcelRow = ({ table }) => {
   return (
     <div>
       <div>
-        <div className={` ${styles.content} ${styles.row}`}>
+        <div className={` ${styles.content} ${styles.row}`} >
           <div className={`${styles.cell} ${styles.centent_cell} ${styles.cellTable_name}`}>
             {row.Column_name}
             
           </div>
-          <div className={`${styles.cell} ${styles.centent_cell} ${styles.cellDiscription}`}>
-            {row.discription.length > 106 ? row.discription.slice(0, 106) : row.discription}
-            {row.discription.length > 107 && <span>...</span>} &nbsp;
+          <div className={`${styles.cell} ${styles.centent_cell} ${styles.cellDescription}`}>
+            {row.Description.length > 106 ? row.Description.slice(0, 106) : row.Description}
+            {row.Description.length > 107 && <span>...</span>} &nbsp;
             {/* {row.discription} */}
 
           </div>
           <div className={`${styles.cell} ${styles.centent_cell} ${styles.cellColumn_Type}`}>{row.Column_Type}</div>
-          <div className={`${styles.cell} ${styles.centent_cell} ${styles.cellRequired}`}>{row.required}</div>
+          <div className={`${styles.cell} ${styles.centent_cell} ${styles.cellRequired}`}>{row.Required}</div>
           <div className={`${styles.cell} ${styles.centent_cell} ${styles.cellIndicator}`}>{row.indicators.map(indicator => <ExcelTag Tag={indicator}></ExcelTag>)}</div>
           <div className={`${styles.cell} ${styles.centent_cell} ${styles.cellAction}`}>
         {console.log('你好')}

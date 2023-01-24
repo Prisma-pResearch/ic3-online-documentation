@@ -1,7 +1,6 @@
 import { Row } from 'antd';
 import React from 'react'
 import ExcelRow from './excel-row';
-import data from './menu-json.json'
 import styles from './styles.module.css';
 
 const ExcelHandleTable3 = (table) => {
@@ -16,16 +15,16 @@ const ExcelHandleTable3 = (table) => {
         <div className={`${styles.table_title} ${styles.row}`}>{Table_name} </div>
         <div className={`${styles.content}`}>
             <div className={`${styles.row} ${styles.title_cell}`}>
-                <div className={`${styles.cell} ${styles.cellTable_name}`}>Table Name</div>
-                <div className={`${styles.cell} ${styles.cellDiscription}`}>Discription</div>
+                <div className={`${styles.cell} ${styles.cellTable_name}`}>Column Name</div>
+                <div className={`${styles.cell} ${styles.cellDescription}`}>Description</div>
                 <div className={`${styles.cell} ${styles.cellColumn_Type}`}>Column Type</div>
-                <div className={`${styles.cell} ${styles.cellRequired}`}>Required?</div>
+                <div className={`${styles.cell} ${styles.cellRequired}`}>Required</div>
                 <div className={`${styles.cell} ${styles.cellIndicator}`}>Indicator</div>
                 <div className={`${styles.cell} ${styles.cellTags}`}>Action</div>
             </div >
             <div  >
 
-                {Table.columns.map(row => (
+                {Table.Columns.map(row => (
                     <ExcelRow table={row} />
 
                 ))}

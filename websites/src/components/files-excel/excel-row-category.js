@@ -1,6 +1,6 @@
 import { Button } from 'antd';
 import React, { useState } from 'react'
-import ExcelHandleTable2 from './excel-table-category';
+// import ExcelHandleTable2 from './excel-table-category';
 import ExcelHandleTable3 from './excel-table-table';
 import ExcelTag from './excel-tag';
 import styles from './styles.module.css';
@@ -18,14 +18,14 @@ const ExcelRowCategory = ({ table }) => {
   return (
     <div>
       <div>
-        <div className={` ${styles.content} ${styles.row}`}>
+        <div className={` ${styles.content} ${styles.row}`} >
           <div className={`${styles.cell} ${styles.centent_cell} ${styles.cellTable_name}`}>
             {row.Table_name}
             
           </div>
-          <div className={`${styles.cell} ${styles.centent_cell} ${styles.cellDiscription}`}>
-            {row.discription.length > 106 ? row.discription.slice(0, 106) : row.discription}
-            {row.discription.length > 107 && <span>...</span>} &nbsp;
+          <div className={`${styles.cell} ${styles.centent_cell} ${styles.cellDescription}`}>
+            {row.Description.length > 106 ? row.Description.slice(0, 106) : row.Description}
+            {row.Description.length > 107 && <span>...</span>} &nbsp;
             {/* {row.discription} */}
 
           </div>
@@ -33,7 +33,7 @@ const ExcelRowCategory = ({ table }) => {
           <div className={`${styles.cell} ${styles.centent_cell} ${styles.cellAction}`}>
 
             
-            {row.columns != null && <Button className={`${styles.cellActionTag}`} onClick={clickTheButton}>Show Table</Button>}
+            {row.Columns != null && <Button className={`${styles.cellActionTag}`} onClick={clickTheButton}>Show Table</Button>}
           </div>
         </div>
 
