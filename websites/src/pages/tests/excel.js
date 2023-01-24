@@ -1,5 +1,6 @@
 import React from 'react'
-import ExcelHandleTable2 from './excel-3'
+import ExcelHandleTable2 from './excel-table-category'
+// import data from './menu-json.json'
 import data from './menu-json.json'
 
 const Excel = () => {
@@ -12,4 +13,4 @@ const Excel = () => {
   )
 }
 
-export default Excel
+export default Excel;

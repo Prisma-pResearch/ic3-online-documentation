@@ -9,7 +9,7 @@
     display: flex;
     flex-direction: column;
     margin: 20px;
-    min-width: 457rem;
+    min-width: 45rem;
 
 }
 /* The title of the table */
@@ -110,13 +110,29 @@
 
 .cellDiscription {
 width: 80rem;
+min-width: 15rem;
 font-size: 14px;
 line-height: 1rem;
 
 
 }
 
+.cellColumn_Type {
+    width: 7rem; 
+    min-width: 7rem;
+}
 
+.cellRequired {
+    width: 6rem; 
+    min-width: 6rem;
+
+}
+
+.cellIndicator {
+    width: 6rem; 
+    min-width: 6rem;
+
+}
 .cellAction {
     width: 8rem;
     /* background-color: red; */

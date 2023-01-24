@@ -1,68 +1,57 @@
 [
     {
-        "Table_name": "Main",
+        "Category_name": "Patient Info",
         "discription": "null",
+        "tags":"Patient_info",
         "columns": [
+
             {
-                "Table_name": "Theropy",
+                "Table_name": "Encounters",
                 "discription": "null discription ull discription ull discription ull discription ull discription ull discription ull discription ull discription ull discription ull discription  In your case, instead of passing a class prop to the OverlayView component, you should ideally pass a prop that describes the state of the component. Within the OverlayView component, compute the correct classes to be applied using the classSet helper.",
-                "tags": [
-                    "Heart",
-                    "Lung"
-                ]
-            },
-            {
-                "Table_name": "Basic Infos",
-                "discription": "In your case, instead of passing a class prop to the OverlayView component, you should ideally pass a prop that describes the state of the component. Within the OverlayView component, compute the correct classes to be applied using the classSet helper. discription",
                 "tags": [
                     "Heart",
                     "Lung"
                 ],
-                "columns": [
+             
+                "columns":[
                     {
-                        "Table_name": "Sub Basic Infos sub",
+                        "Column_name": "Sub Basic Infos sub",
                         "discription": "null",
                         "tags": [
                             "Heart",
                             "Lung"
-                        ]
-                    },
-                    {
-                        "Table_name": "Sub 2Basic Infos",
-                        "discription": "null",
-                        "tags": [
-                            "Heart",
-                            "Other"
                         ],
-                        "columns": [
-                            {
-                                "Table_name": "Sub Basic Infos sub",
-                                "discription": "null",
-                                "tags": [
-                                    "Heart",
-                                    "Lung"
-                                ]
-                            },
-                            {
-                                "Table_name": "Sub 2Basic Infos",
-                                "discription": "null",
-                                "tags": [
-                                    "Heart",
-                                    "Lung"
-                                ]
-                            }
-                        ]
+                        "Column_Type": "Char",
+                        "required": "Yes",
+                        "indicators": ["Prim_key"],
+                        "data":["test"]
                     }
                 ]
             },
             {
-                "Table_name": "Theropy",
+                "Table_name": "Encounters",
                 "discription": "null discription ull discription ull discription ull discription ull discription ull discription ull discription ull discription ull discription ull discription  In your case, instead of passing a class prop to the OverlayView component, you should ideally pass a prop that describes the state of the component. Within the OverlayView component, compute the correct classes to be applied using the classSet helper.",
                 "tags": [
                     "Heart",
                     "Lung"
+                ],
+             
+                "columns":[
+                    {
+                        "Column_name": "Sub Basic Infos sub",
+                        "discription": "null",
+                        "tags": [
+                            "Heart",
+                            "Lung"
+                        ],
+                        "Column_Type": "Char",
+                        "required": "Yes",
+                        "indicators": ["Prim_key"],
+                        "data":["test"]
+                    }
                 ]
             }
+          
         ]
     }
 ]
