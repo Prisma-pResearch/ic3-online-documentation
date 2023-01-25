@@ -2,8 +2,8 @@ const homepagelists = [
     {
       Title: 'Projects',
       List: [
-        { name: 'idealist-xai', link: '/docs/projects/idealist-xai' },
-        { name: 'chrorus', link: '/docs/projects/chrorus' },
+        { name: 'XAI-IDEALIST', link: '/docs/projects/XAI-IDEALIST' },
+        { name: 'chrorus', link: '/docs/projects/Bridge2AI' },
         
 
       ]
@@ -11,23 +11,16 @@ const homepagelists = [
     {
       Title: 'Datasets',
       List: [
-        { name: 'API epic', update: "2022-1-2", numPatients: '21', numSurgeries: '20', link: '/docs/datasets/api_epic2' },
-        { name: 'Idealist', update: "2022-1-2", numPatients: '21', numSurgeries: '20', link: '/docs/intro' },
-        { name: 'multimodel AI', update: "2022-1-2", numPatients: '21', numSurgeries: '20', link: '/docs/intro' },
-        { name: 'multimodel AI', update: "2022-1-2", numPatients: '21', numSurgeries: '20', link: '/docs/intro' },
-        { name: 'multimodel AI', update: "2022-1-2", numPatients: '21', numSurgeries: '20', link: '/docs/intro' },
-        { name: 'multimodel AI', update: "2022-1-2", numPatients: '21', numSurgeries: '20', link: '/docs/intro' },
-        { name: 'multimodel AI', update: "2022-1-2", numPatients: '21', numSurgeries: '20', link: '/docs/intro' },
-        { name: 'multimodel AI', update: "2022-1-2", numPatients: '21', numSurgeries: '20', link: '/docs/intro' },
-
+        { name: 'AKI EPIC2', update: "2020-10", numPatients: '156699', numSurgeries: '221083', link: '/docs/datasets/AKIEPIC2' },
+        { name: 'IEDALIST', update: "2022-06", numPatients: '254979', numSurgeries: '545824', link: '/docs/datasets/IDEALIST' },
       ]
     },
 
     {
       Title: 'Workspace',
       List: [
-        { name: 'idealist-xai', update: "2022-1-2", numPatients: '21', numSurgeries: '20' },
-        { name: 'chrorus', update: "2022-1-2", numPatients: '21', numSurgeries: '20' },
+        { name: 'HiPerGator', update: "2022-10"},
+        { name: 'IC3-Servers', update: "2022-12"},
 
       ]
     },

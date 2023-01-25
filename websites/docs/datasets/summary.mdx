@@ -18,7 +18,7 @@ Understand the datases by reading the datasets descriptions, data dictionaries a
 IC<sup>3</sup> data core takes the responsibility to **manage** the data collected from UF-IDR(Integrated Data Registry). All data will be processed and stored with below brief workflow.<br />
 
 ```mermaid
-%%{init: {'theme':'base'}}%%
+%%{init: {'theme': 'default', topLevel :1,"flowchart" : { "curve" : "linear" } } }%%
 flowchart LR
 A[Raw data] -- IDR data pipeline --> B[EHR/Text data] & G[Image data] & I[Waveform data]
 B -- Data Cleaning Pipeline --> C[Cleaned EHR data]
