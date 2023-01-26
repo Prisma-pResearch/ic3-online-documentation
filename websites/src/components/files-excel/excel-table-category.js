@@ -5,24 +5,55 @@ import styles from './styles.module.css';
 
 const ExcelHandleTable2 = (table) => {
     // const Table = data[0]
-    const Table = table.table[0]
-    const Table_name = Table.Category_name
-    const color = (Table_name) => {
-        switch (Table_name) {
-            case 'Patient Info':
-                return 'pink';
-            case 'Other':
-                return '#erdcs53';
+    const Table = table.table
+    const Category_name = Table.Category_name
+
+    function get_bg_color(a) {
+        switch (a) {
+            case "Administrative Data":
+                return { backgroundColor: '#ffc0cb', color: "#6B202B" };
+            case "Demographic Info":
+                return { backgroundColor: '#A1C7E6', color: "#1A1157" };
+            case "Health Economics Data":
+                return { backgroundColor: '#F0EE6E', color: "#574A2E" };
+            case "Health System Data":
+                return { backgroundColor: '#BFB6F0', color: "#461857" };
+            case "Medical History":
+                return { backgroundColor: '#F0A98D', color: "#46270B" };
+            case "Outcomes Data":
+                return { backgroundColor: '#A3F0C3', color: "#165731" };
             default:
-                return  '#f3f3f3'
+                return { backgroundColor: '#ffc0cb', color: "#6B202B" }
+        }
+    }
+    function get_sub_title_bg_color(a) {
+        switch (a) {
+            case "Administrative Data":
+                return { backgroundColor: '#ffc0cb40'};
+            case "Demographic Info":
+                return { backgroundColor: '#ABD3E850'};
+            case "Health Economics Data":
+                return { backgroundColor: '#F0EE6E40'};
+            case "Health System Data":
+                return { backgroundColor: '#BFB6F040'};
+            case "Medical History":
+                return { backgroundColor: '#F0A98D40'};
+            case "Outcomes Data":
+                return { backgroundColor: '#A3F0C340'};
+            default:
+                return { backgroundColor: '#ffc0cb40'};
         }
     }
 
+    const title_bg_color = get_bg_color(Category_name)
+    const sub_title_bg_color = get_sub_title_bg_color(Category_name)
+    console.log(title_bg_color)
+
     return (
         <div className={styles.table}>
-            <div className={`${styles.table_title} ${styles.row} `} >{Table_name} </div>
+            <div className={`${styles.table_title} ${styles.row} `} style={title_bg_color}>{Category_name} </div>
             <div className={`${styles.content}`}>
-                <div className={`${styles.row} ${styles.title_cell}`}>
+                <div className={`${styles.row} ${styles.title_cell}`} style={sub_title_bg_color}>
                     <div className={`${styles.cell} ${styles.cellTable_name}`}>Table Name</div>
                     <div className={`${styles.cell} ${styles.cellDescription}`}>Description</div>
                     {/* <div className={`${styles.cell} ${styles.cellTags}`}>Tags</div> */}

@@ -6,9 +6,6 @@ import styles from './styles.module.css';
 const ExcelHandleTable3 = (table) => {
     // const Table = data[0]
     const Table = table.table
-    console.log("table 4 ↓")
-    console.dir(table)
-    console.log("table 4↑")
     const Table_name = Table.Table_name
     return (
         <div className={styles.table} style={{minWidth:"56rem"}}>
