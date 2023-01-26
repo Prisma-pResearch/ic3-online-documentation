@@ -2,7 +2,7 @@ import { Button } from 'antd';
 import React, { useState } from 'react'
 import ExcelHandleTable3 from './excel-table-table';
 import styles from './styles.module.css';
-const ExcelRowCategory = ({ table }) => {
+const ExcelRowCategory = ({ table,title_bg_color,sub_title_bg_color }) => {
 
   const row = table
   const [showSub, setShowSub] = useState(false)
@@ -20,7 +20,7 @@ const ExcelRowCategory = ({ table }) => {
     <div>
       <div>
         
-        <div className={` ${styles.content} ${styles.row}`} >
+        <div className={` ${styles.content} ${styles.row}`} style={{backgroundColor:"white"}}>
           <div className={`${styles.cell} ${styles.centent_cell} ${styles.cellTable_name}`}>
             {row.Table_name}
             

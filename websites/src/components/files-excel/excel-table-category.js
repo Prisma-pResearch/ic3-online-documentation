@@ -9,7 +9,7 @@ const ExcelHandleTable2 = ({ table, index }) => {
     // console.dir(table)
     const Table = table
     const Category_name = Table.Category_name
-    let color_P = index % 6
+    var color_P = index % 6
 
     function get_bg_color(a) {
         switch (a) {
@@ -32,19 +32,19 @@ const ExcelHandleTable2 = ({ table, index }) => {
     function get_sub_title_bg_color(a) {
         switch (a) {
             case 1:
-                return { backgroundColor: '#ffc0cb40' };
+                return { backgroundColor: '#FEEFEE' };
             case 2:
-                return { backgroundColor: '#ABD3E850' };
+                return { backgroundColor: '#D3EDFF' };
             case 3:
-                return { backgroundColor: '#F0EE6E40' };
+                return { backgroundColor: '#FCFFDF' };
             case 4:
-                return { backgroundColor: '#BFB6F040' };
+                return { backgroundColor: '#D4D5F3' };
             case 5:
-                return { backgroundColor: '#F0A98D40' };
+                return { backgroundColor: '#F2D6CC' };
             case 0:
-                return { backgroundColor: '#A3F0C340' };
+                return { backgroundColor: '#CAF0DA' };
             default:
-                return { backgroundColor: '#ffc0cb40' };
+                return { backgroundColor: '#FEEFEE' };
         }
     }
 
@@ -53,10 +53,10 @@ const ExcelHandleTable2 = ({ table, index }) => {
     const sub_title_bg_color = get_sub_title_bg_color(color_P)
 
     return (
-        <div className={styles.table}>
+        <div className={styles.table} >
             <div className={`${styles.table_title} ${styles.row} `} style={title_bg_color}>{Category_name} </div>
-            <div className={`${styles.content}`}>
-                <div className={`${styles.row} ${styles.title_cell}`} style={sub_title_bg_color}>
+            <div className={`${styles.content}`} >
+                <div className={`${styles.row} ${styles.title_cell}`} style={sub_title_bg_color } >
                     <div className={`${styles.cell} ${styles.cellTable_name}`}>Table Name</div>
                     <div className={`${styles.cell} ${styles.cellDescription}`}>Description</div>
                     {/* <div className={`${styles.cell} ${styles.cellTags}`}>Tags</div> */}

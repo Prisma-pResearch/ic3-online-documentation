@@ -20,7 +20,7 @@ const ExcelRow = ({ table }) => {
   return (
     <div>
       <div>
-        <div className={` ${styles.content} ${styles.row}`} >
+        <div className={` ${styles.content} ${styles.row}`} style={{backgroundColor:"white"}}>
           <div className={`${styles.cell} ${styles.centent_cell} ${styles.cellTable_name}`}>
             {row.Column_name}
 
