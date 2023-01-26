@@ -3,22 +3,20 @@ sidebar_position: 3
 title: IDEALIST
 description: datasets for Surgical cases
 ---
-import ExcelHandleTable2 from '@site/src/components/files-excel/excel-table-category'
+import Excel from '@site/src/components/files-excel/excel'
 import datas from '@site/static/meta_IDEALIST.json'
-import ErrorBoundary from '@docusaurus/ErrorBoundary';
 
 
-export const Excel = () => (
+export const ExcelShow = () => (
    <div>
-      {datas.map(data =>
-        (<ExcelHandleTable2 table={data} />))}
+      <Excel datas={datas} />
     </div>
 );
 
 
 ## Datasets Introduction
 Retrospective temporal dataset for adult patients who underwent inpatient surgical procedure at UFH between 1/1/2012 and 10/15/2020.
-### Status
+## Status
 IDEALIST dataset is ready to be used. 
 
 <!--
@@ -30,4 +28,4 @@ IDEALIST dataset is ready to be used.
 
 [Download Complete Data Dictionary](./IDEALIST.xlsx)
 
-<Excel/>
+<ExcelShow/>
