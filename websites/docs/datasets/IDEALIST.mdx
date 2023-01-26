@@ -3,13 +3,15 @@ sidebar_position: 3
 title: IDEALIST
 description: datasets for Surgical cases
 ---
-
 import ExcelHandleTable2 from '@site/src/components/files-excel/excel-table-category'
-import data from '@site/static/meta_IDEALIST.json'
+import datas from '@site/static/meta_IDEALIST.json'
+import ErrorBoundary from '@docusaurus/ErrorBoundary';
+
 
 export const Excel = () => (
-    <div>
-        <ExcelHandleTable2 table = {data}/>
+   <div>
+      {datas.map(data =>
+        (<ExcelHandleTable2 table={data} />))}
     </div>
 );
 
