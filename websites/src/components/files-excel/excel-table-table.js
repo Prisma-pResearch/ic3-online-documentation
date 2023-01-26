@@ -3,13 +3,14 @@ import React from 'react'
 import ExcelRow from './excel-row';
 import styles from './styles.module.css';
 
-const ExcelHandleTable3 = (table, index) => {
+const ExcelHandleTable3 = ({index,table}) => {
     // const Table = data[0]
-    const Table = table.table
+    const Table = table
     const Table_name = Table.Table_name
     const color_P = index
     console.dir(color_P)
 
+ 
     function get_bg_color(a) {
         switch (a) {
             case 1:
@@ -25,7 +26,7 @@ const ExcelHandleTable3 = (table, index) => {
             case 0:
                 return { backgroundColor: '#A3F0C3', color: "#165731" };
             default:
-                return { backgroundColor: '#ffc0cb', color: "#6B202B" }
+                return { backgroundColor: '#D9D9D9', color: "black" }
         }
     }
     function get_sub_title_bg_color(a) {
@@ -43,7 +44,7 @@ const ExcelHandleTable3 = (table, index) => {
             case 0:
                 return { backgroundColor: '#A3F0C340'};
             default:
-                return { backgroundColor: '#ffc0cb40'};
+                return { backgroundColor: '#F2F2F2'};
         }
     }
 

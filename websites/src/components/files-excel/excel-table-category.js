@@ -3,13 +3,13 @@ import React from 'react'
 import ExcelRowCategory from './excel-row-category';
 import styles from './styles.module.css';
 
-const ExcelHandleTable2 = ({table, index}) => {
-    
+const ExcelHandleTable2 = ({ table, index }) => {
+
     // const Table = data[0]
     // console.dir(table)
     const Table = table
     const Category_name = Table.Category_name
-    const color_P = index % 6
+    let color_P = index % 6
 
     function get_bg_color(a) {
         switch (a) {
@@ -32,23 +32,24 @@ const ExcelHandleTable2 = ({table, index}) => {
     function get_sub_title_bg_color(a) {
         switch (a) {
             case 1:
-                return { backgroundColor: '#ffc0cb40'};
+                return { backgroundColor: '#ffc0cb40' };
             case 2:
-                return { backgroundColor: '#ABD3E850'};
+                return { backgroundColor: '#ABD3E850' };
             case 3:
-                return { backgroundColor: '#F0EE6E40'};
+                return { backgroundColor: '#F0EE6E40' };
             case 4:
-                return { backgroundColor: '#BFB6F040'};
+                return { backgroundColor: '#BFB6F040' };
             case 5:
-                return { backgroundColor: '#F0A98D40'};
+                return { backgroundColor: '#F0A98D40' };
             case 0:
-                return { backgroundColor: '#A3F0C340'};
+                return { backgroundColor: '#A3F0C340' };
             default:
-                return { backgroundColor: '#ffc0cb40'};
+                return { backgroundColor: '#ffc0cb40' };
         }
     }
 
     const title_bg_color = get_bg_color(color_P)
+
     const sub_title_bg_color = get_sub_title_bg_color(color_P)
 
     return (
@@ -62,10 +63,13 @@ const ExcelHandleTable2 = ({table, index}) => {
                     <div className={`${styles.cell} ${styles.cellAction}`}>Action</div>
                 </div >
                 <div  >
-                
+
                     {Table.Columns.map(row => (
-                       
-                        <ExcelRowCategory index={color_P} table={row} />
+                        <>
+                            <ExcelRowCategory index={color_P} table={row} />
+                        </>
+
+
 
                     ))}
                 </div>
