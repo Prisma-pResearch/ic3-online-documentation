@@ -3,9 +3,10 @@ import React from 'react'
 import ExcelRowCategory from './excel-row-category';
 import styles from './styles.module.css';
 
-const ExcelHandleTable2 = (table) => {
+const ExcelHandleTable2 = ({table}) => {
     // const Table = data[0]
-    const Table = table.table
+    console.dir(table)
+    const Table = table
     const Category_name = Table.Category_name
 
     function get_bg_color(a) {
@@ -47,7 +48,6 @@ const ExcelHandleTable2 = (table) => {
 
     const title_bg_color = get_bg_color(Category_name)
     const sub_title_bg_color = get_sub_title_bg_color(Category_name)
-    console.log(title_bg_color)
 
     return (
         <div className={styles.table}>
