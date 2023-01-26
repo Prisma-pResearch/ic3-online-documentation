@@ -19,7 +19,6 @@
     font-family: 'Oswald', sans-serif;
     text-indent: 10px;
     letter-spacing: 0.3px;
-    background-color: rgba(99, 95, 95, 0.438);
 
 }
 
@@ -40,7 +39,7 @@
 .title_cell {
     font-size: 15px;
     font-weight: 580;
-    background-color: #e3e1e1c7;
+    /* background-color: #e3e1e1c7; */
 }
 
 
@@ -76,7 +75,7 @@
     list-style: none;
     overflow: hidden;
     padding: 0.4rem 0.2rem;
-    max-height: 4rem;
+    /* max-height: 4rem; */
 }
 
 .cell:not(:last-child) {
@@ -86,12 +85,13 @@
 
 /* The Table name cell */
 .cellTable_name{
-    width: 15rem;
-    min-width: 10rem;
+    width: 20rem;
+    min-width: 15rem;
     font-size: 14px;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+    padding-left: 1rem;
     /* background-color: #3a3434; */
 
 }
@@ -156,6 +156,7 @@ line-height: 1rem;
 .cellTags {
     width: 8rem;
     min-width: 8rem;
+
 }
 
 /* each Tag */

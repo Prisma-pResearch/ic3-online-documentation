@@ -19,9 +19,6 @@ const LoginBox = () => {
 
         })
         console.log(loginStore.token)
-        // navigate("http://localhost:3000");
-
-
     }
     
     const onFinishFailed = (errorInfo:any)=>{
