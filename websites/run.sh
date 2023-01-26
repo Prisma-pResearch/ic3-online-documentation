@@ -12,5 +12,5 @@ echo "Install Node Dependencies"
 npm install .
 
 ## start development mode
-npm run start
+npm run start --host 0.0.0.0
 
