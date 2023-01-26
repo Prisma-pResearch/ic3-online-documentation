@@ -3,25 +3,27 @@ import React from 'react'
 import ExcelRowCategory from './excel-row-category';
 import styles from './styles.module.css';
 
-const ExcelHandleTable2 = ({table}) => {
+const ExcelHandleTable2 = ({table, index}) => {
+    
     // const Table = data[0]
-    console.dir(table)
+    // console.dir(table)
     const Table = table
     const Category_name = Table.Category_name
+    const color_P = index % 6
 
     function get_bg_color(a) {
         switch (a) {
-            case "Administrative Data":
+            case 1:
                 return { backgroundColor: '#ffc0cb', color: "#6B202B" };
-            case "Demographic Info":
+            case 2:
                 return { backgroundColor: '#A1C7E6', color: "#1A1157" };
-            case "Health Economics Data":
+            case 3:
                 return { backgroundColor: '#F0EE6E', color: "#574A2E" };
-            case "Health System Data":
+            case 4:
                 return { backgroundColor: '#BFB6F0', color: "#461857" };
-            case "Medical History":
+            case 5:
                 return { backgroundColor: '#F0A98D', color: "#46270B" };
-            case "Outcomes Data":
+            case 0:
                 return { backgroundColor: '#A3F0C3', color: "#165731" };
             default:
                 return { backgroundColor: '#ffc0cb', color: "#6B202B" }
@@ -29,25 +31,25 @@ const ExcelHandleTable2 = ({table}) => {
     }
     function get_sub_title_bg_color(a) {
         switch (a) {
-            case "Administrative Data":
+            case 1:
                 return { backgroundColor: '#ffc0cb40'};
-            case "Demographic Info":
+            case 2:
                 return { backgroundColor: '#ABD3E850'};
-            case "Health Economics Data":
+            case 3:
                 return { backgroundColor: '#F0EE6E40'};
-            case "Health System Data":
+            case 4:
                 return { backgroundColor: '#BFB6F040'};
-            case "Medical History":
+            case 5:
                 return { backgroundColor: '#F0A98D40'};
-            case "Outcomes Data":
+            case 0:
                 return { backgroundColor: '#A3F0C340'};
             default:
                 return { backgroundColor: '#ffc0cb40'};
         }
     }
 
-    const title_bg_color = get_bg_color(Category_name)
-    const sub_title_bg_color = get_sub_title_bg_color(Category_name)
+    const title_bg_color = get_bg_color(color_P)
+    const sub_title_bg_color = get_sub_title_bg_color(color_P)
 
     return (
         <div className={styles.table}>
@@ -60,9 +62,10 @@ const ExcelHandleTable2 = ({table}) => {
                     <div className={`${styles.cell} ${styles.cellAction}`}>Action</div>
                 </div >
                 <div  >
-
+                
                     {Table.Columns.map(row => (
-                        <ExcelRowCategory table={row} />
+                       
+                        <ExcelRowCategory index={color_P} table={row} />
 
                     ))}
                 </div>

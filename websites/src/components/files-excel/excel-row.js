@@ -46,7 +46,6 @@ const ExcelRow = ({ table }) => {
         </div>
 
       </div>
-      {console.dir(row)}
 
       {/* <div className={`${styles.content} ${styles.row} ${styles.cellTags}`}>{row.tags.map(tag => <ExcelTag Tag={tag}></ExcelTag>)}</div> */}
       {showSub && <div className={`${styles.subTable}`}> {row.Data}</div>}
