@@ -1,18 +1,13 @@
 import React from 'react'
-import ExcelHandleTable2 from '../../components/files-excel/excel-table-category'
-// import data from './menu-json.json'
+import Excel from '../../components/files-excel/excel'
 import datas from './meta_IDEALIST'
 
-const Excel = () => {
-
-
+const ExcelPage = () => {
   return (
     <div>
-      {datas.map(data =>
-        (<ExcelHandleTable2 table={data} />))}
-
+      <Excel datas={datas} />
     </div>
   )
 }
 
-export default Excel;
+export default ExcelPage
