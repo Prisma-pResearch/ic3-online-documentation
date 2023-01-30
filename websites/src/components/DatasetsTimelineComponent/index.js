@@ -11,13 +11,13 @@ export const FeatureList=[
         icon: <SmileOutlined />
     },
     {
-        timestamp:'2022-12-15',
+        timestamp:'2023-01-31',
         color:'blue',
         task:'Get Sample Multimodal AI data (version2)',
         icon: <ClockCircleOutlined />
     },
     {
-        timestamp:'2023-01-31',
+        timestamp:'2023-02-20',
         color:'blue',
         task:'Finish the OMOP mapping of Multimodal AI datasets',
         icon: <ClockCircleOutlined />
