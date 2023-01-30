@@ -7,6 +7,7 @@ import styles from './styles.module.css';
 import { useStore } from '../../stores';
 import { observer } from 'mobx-react-lite';
 
+
 const LoginBox = () => {
     const {loginStore} = useStore()
     // const navigate = useNavigate();
@@ -17,8 +18,12 @@ const LoginBox = () => {
             username: values.username,
             password: values.password,
 
+        }).then(()=>{
+            console.log(loginStore.token)
+        }).catch((error) => {
+            alert("Please check your username or password!")
         })
-        console.log(loginStore.token)
+        
     }
     
     const onFinishFailed = (errorInfo:any)=>{
@@ -101,11 +106,11 @@ const LoginBox = () => {
                                 Register
                             </Button>
                         </div>
-                        <div className='mt-[0.5rem] text-white'>
+                        <div className='mt-[0.5rem] text-white' style={{marginTop:"1rem"}}>
                             <a className="login-form-forgot  mt-[1rem]" href="">
                                 Forgot password
                             </a>
-                            <a className="block mt-[0.5rem]" href="">
+                            <a className="block mt-[0.5rem] pl-[2rem]" href="" style={{marginLeft:"4rem"}}>
                                 Register now!
                             </a>
                         </div>
