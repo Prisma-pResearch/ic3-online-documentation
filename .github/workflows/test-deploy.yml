@@ -20,8 +20,10 @@ jobs:
         with:
           node-version: 18
           cache: yarn
-
-      - name: Install dependencies
-        run: yarn install --frozen-lockfile
-      - name: Test build website
-        run: yarn build
+          
+      # Install and build Docusaurus website
+      - name: Build site
+        run: |
+          cd websites
+          yarn install --frozen-lockfile
+          yarn build
