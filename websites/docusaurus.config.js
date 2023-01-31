@@ -8,7 +8,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 const config = {
   title: 'Intelligent Critical Care Center Online Documentation',
   tagline: 'We are idealists, problem-solvers, and explorers of digital health and AI',
-  url: 'https://ic3-online-document.netlify.app',
+  url: 'https://Chesterguan.github.io',
   baseUrl: '/ic3-online-documentation/',
   markdown: {
     mermaid: true,
