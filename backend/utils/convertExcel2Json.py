@@ -13,19 +13,26 @@ Categories_Table = {
     'Outcomes Data': 'In-house generated outcomes data for future analysis.'
 }
 
+Categories_Table_OMOP = {
+    'CDM': 'OMOP standardized clinical data model',
+    'IC3_CUSTOMIZED': 'IC3 customized tables',
+    'RESULTS': 'IC3 customized cohort ',
+    'VOCAB': 'OMOP standardized vocabularies'
+}
+
 
 def parserIndicators(row):
     results = ""
     if(row['PRIMARY_KEY'] == 'YES'):
         results += 'PRI KEY'
-    if(row['IS_NULLABLE'] == 'YES'):
+    if('IS_NULLABLE' in row and row['IS_NULLABLE'] == 'YES'):
         results += ";" if results != "" else ""
         results += "NULLABLE"
 
     return results
 
 
-def convert(folderPath:str):
+def convert(folderPath:str , isOMOP:bool = False):
 
     _databaseName = os.path.basename(folderPath)
 
@@ -37,8 +44,8 @@ def convert(folderPath:str):
     _columns = _columns.applymap(str)
     _columns.fillna('')
     _columns.rename(columns={'COLUMN_NAME':'Column_name','COLUMN_TYPE':'Column_Type', 'COLUMN_DESCRIPTION':'Description'}, inplace=True)
-    _columns['Indicators'] = _columns[['IS_NULLABLE','PRIMARY_KEY']].apply(lambda x : parserIndicators(x), axis= 1)
-    _columns['Required'] = 'Yes'
+    _columns['Indicators'] = _columns.apply(lambda x : parserIndicators(x), axis= 1)
+    _columns['Required'] = 'Yes' if 'isRequired' not in _columns.columns else _columns['isRequired']
 
 
     categories = {}
@@ -72,7 +79,9 @@ def convert(folderPath:str):
 
     allInfo = []
 
-    for k,v in Categories_Table.items():
+    CategoriesTables = Categories_Table if not isOMOP else Categories_Table_OMOP
+
+    for k,v in CategoriesTables.items():
         _tempDict = {
             "Category_name" : k,
             "Columns" : categories[k]
@@ -84,4 +93,4 @@ def convert(folderPath:str):
 
 
 
-convert('./IDEALIST')
+convert('./OMOP', isOMOP=True)

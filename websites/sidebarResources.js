@@ -17,10 +17,11 @@ module.exports = {
       items: [
         'OMOP/Introduction',
         'OMOP/Mapping',
+        'OMOP/Database'
       ],
     },
   ],
-  
+
   mappingSidebar: [
     'OMOP/Mapping',
     {
