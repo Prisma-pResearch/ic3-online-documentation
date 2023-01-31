@@ -9,7 +9,7 @@ const config = {
   title: 'Intelligent Critical Care Center Online Documentation',
   tagline: 'We are idealists, problem-solvers, and explorers of digital health and AI',
   url: 'https://ic3-online-document.netlify.app',
-  baseUrl: '/',
+  baseUrl: '/ic3-online-documentation/',
   markdown: {
     mermaid: true,
   },
