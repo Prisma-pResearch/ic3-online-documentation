@@ -25,5 +25,5 @@ jobs:
       - name: Build site
         run: |
           cd websites
-          yarn install --frozen-lockfile
-          yarn build
+          npm install
+          npm run build
