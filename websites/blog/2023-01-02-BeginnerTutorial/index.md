@@ -5,13 +5,9 @@ authors: [chester]
 tags: [IC3, Tutorial, Beginner]
 ---
 
-import { Image } from 'antd';
-import assignmentImage from './core arrangements.jpg';
-import aiMedicineImage from './ai-medicine.jpg';
-
 Hi There! Welcome to **Intelligent Critical Care Center**. 
 
-<Image src={aiMedicineImage} />
+![AIimage](./ai-medicine.jpg)
 
 This blog will walk you through the resources and workflows provided by IC<sup>3</sup> center and smooth your onboarding process. 
 
@@ -27,4 +23,4 @@ IC<sup>3</sup> is a big organization and involves many researchers and roles. Ex
 
 The general tasks assignments for each cores are shown below:
 
-<Image src={assignmentImage} alt="Assignments between cores" />
+![Core Assignments](./core%20arrangements.jpg)
