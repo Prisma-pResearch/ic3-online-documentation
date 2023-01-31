@@ -38,7 +38,8 @@
     "react-router-dom": "^6.6.1",
     "sass": "^1.56.1",
     "start": "^5.1.0",
-    "xlsx": "^0.18.5"
+    "xlsx": "^0.18.5",
+    "yarn": "^1.22.19"
   },
   "devDependencies": {
     "@docusaurus/module-type-aliases": "^2.3.0"
