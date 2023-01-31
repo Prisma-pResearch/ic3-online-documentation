@@ -3,17 +3,133 @@ sidebar_position: 2
 title: Core concepts
 description: Core concepts of datasets
 ---
+import Image from '@theme/IdealImage';
 
 # Core concepts
 A few key concepts when working with IC<sup>3</sup> datasets.
 
-:::tip
+:::note
 The key concepts are defined for Epic datasets, for OMOP version data, please refer to [OMOP CDM](https://www.ohdsi.org/data-standardization/).
 :::
 
 ## Identifiers
 
+| Identifier Name     | Description                                                              | Notes                         |
+|---------------------|--------------------------------------------------------------------------|-------------------------------|
+| patient_deiden_id   | Deidentified MRN (UF): Patient's Medical Record Number                   | Each dataset has it's own IDs |
+| encounter_deiden_id | Deidentified Encounter # (CSN): Patient Encounter Number                 | Each dataset has it's own IDs |
+| merged_enc_id       | Merged Encounter IDs based on Encounter Admission and Discharg Timestamp |                               |
+| or_case_num         | Operation Case Identical Number                                          |                               |
 
-## Date and times
+<details>
+<summary> Date and Times </summary>
+
+| table name                  | column name                       | column description                                                                  | notes |
+|-----------------------------|-----------------------------------|-------------------------------------------------------------------------------------|-------|
+| admission_encounters        | admit_datetime                    | Admit DateTime                                                                      |       |
+| admission_encounters        | dischg_datetime                   | Discharge DateTime                                                                  |       |
+| admission_encounters        | ed_arrival_datetime               | Emergency Department Arrival Datetime                                               |       |
+| admission_encounters        | ed_dischg_datetime                | Emergency Department Discharge DateTime                                             |       |
+| anesthesia                  | anesthesia_datetime               | Anesthesia Encountered DateTime                                                     |       |
+| blood_pressure              | bp_datetime                       | Blood Presure Measured DateTime                                                     |       |
+| braden                      | braden_datetime                   | Braden Scale Score Recorded DateTime                                                |       |
+| dialysis                    | observation_datetime              | Dialysis Received DateTime                                                          |       |
+| ecg_cardiology_detail       | ecg_acq_datetime                  | Electrocardiogram Acquisation DateTime                                              |       |
+| encounters                  | admit_datetime                    | Admit DateTime                                                                      |       |
+| encounters                  | dischg_datetime                   | Discharge DateTime                                                                  |       |
+| encounters                  | ed_arrival_datetime               | Emergency Department Arrival Datetime                                               |       |
+| encounters                  | ed_dischg_datetime                | Emergency Department Discharge DateTime                                             |       |
+| encounters                  | ed_dischg_datetime_all            | All ED discharge datetimes for that encounter (some encounters have multiple times) |       |
+| encounters                  | ed_dischg_datetime_first          | Earliest ED Discharge datetime for the encounter                                    |       |
+| encounters                  | merged_admit_datetime             | admission datetime for the merged_encounter                                         |       |
+| encounters                  | merged_dischg_datetime            | discharge datetime for the merged_encounter                                         |       |
+| glasgow                     | glasgow_coma_datetime             | Glasgow Coma Scale Score Recorded DateTime                                          |       |
+| heart_rate                  | vitals_datetime                   | Heart Rate Recorded DateTime                                                        |       |
+| height_weight               | height_weight_datetime            | Height and Weight Measured DateTime                                                 |       |
+| hemodynamic_monitoring      | hemodynamic_monitoring_datetime   | Hemodynamic Monitoring DateTime                                                     |       |
+| intake_outtake              | i_o_datetime                      | Intake/Outtake DateTime                                                             |       |
+| internal_stations           | enter_datetime                    | Station Enter DateTime                                                              |       |
+| internal_stations           | exit_datetime                     | Station Exit DateTime                                                               |       |
+| lab_notes                   | note_datetime                     | Notes Recorded DateTime                                                             |       |
+| labs                        | measurement_datetime              | Lab Measured DateTime                                                               |       |
+| labs                        | order_datetime                    | Order DateTime                                                                      |       |
+| labs                        | result_datetime                   | Result Available DateTime                                                           |       |
+| meds                        | end_datetime                      | Medication End DateTime                                                             |       |
+| meds                        | med_order_datetime                | Medication  Order Datetime                                                          |       |
+| meds                        | med_order_end_datetime            | Medication Order End Datetime                                                       |       |
+| meds                        | med_order_start_datetime          | Medication Order Start Datetime                                                     |       |
+| meds                        | taken_datetime                    | Action Taken DateTime                                                               |       |
+| meds                        | verbatim_end_datetime             |                                                                                     |       |
+| morse                       | morse_datetime                    | Morse Fall Risk Scale Score Recorded DateTime                                       |       |
+| or_case_schedule            | anesthesia_arrival_datetime       | Anesthesia Arrival Datetime                                                         |       |
+| or_case_schedule            | anesthesia_block_start_datetime   | Anesthesia Block Start Datetime                                                     |       |
+| or_case_schedule            | anesthesia_block_stop_datetime    | Anesthesia Block Stop Datetime                                                      |       |
+| or_case_schedule            | anesthesia_ready_datetime         | Anesthesia Ready Datetime                                                           |       |
+| or_case_schedule            | anesthesia_start_datetime         | Anesthesia Start DataTime                                                           |       |
+| or_case_schedule            | anesthesia_stop_datetime          | Anesthesia Stop DataTime                                                            |       |
+| or_case_schedule            | begin_to_close_datetime           | Procedure Begin to End Datetime                                                     |       |
+| or_case_schedule            | dressing_datetime                 | Dressing DateTime                                                                   |       |
+| or_case_schedule            | incision_datetime                 | Incision DateTime                                                                   |       |
+| or_case_schedule            | pacu_start_datetime               | Post-anesthesia Care Unit Start Datetime                                            |       |
+| or_case_schedule            | pre_op_begin_datetime             | Preoperation Begin Datetime                                                         |       |
+| or_case_schedule            | pre_op_end_datetime               | Preoperation End Datetime                                                           |       |
+| or_case_schedule            | procedural_care_complete_datetime | Procedure Care Completion Datetime                                                  |       |
+| or_case_schedule            | procedure_end_datetime            | Procedure End Datetime                                                              |       |
+| or_case_schedule            | procedure_start_datetime          | Procedure Start Datetime                                                            |       |
+| or_case_schedule            | ready_for_or_datetime             | Operation Ready Datetime                                                            |       |
+| or_case_schedule            | room_end_datetime                 | Room of Surgery in Used End Datetime                                                |       |
+| or_case_schedule            | room_start_datetime               | Room of Surgery in Used Start DateTime                                              |       |
+| or_case_schedule            | sched_start_datetime              | Scheduled Surgery Start DateTime                                                    |       |
+| or_case_schedule            | surgeon_in_datetime               | Surgeon In Datetime                                                                 |       |
+| or_case_schedule            | surgeon_out_datetime              | Surgeon Out Datetime                                                                |       |
+| or_case_schedule            | surgery_start_datetime            | Surgery Start Datetime                                                              |       |
+| or_case_schedule            | surgery_stop_datetime             | Surgery Stop Datetime                                                               |       |
+| or_case_schedule_encounters | admit_datetime                    | Admit DateTime                                                                      |       |
+| or_case_schedule_encounters | anesthesia_arrival_datetime       | Anesthesia Arrival Datetime                                                         |       |
+| or_case_schedule_encounters | anesthesia_block_start_datetime   | Anesthesia Block Start Datetime                                                     |       |
+| or_case_schedule_encounters | anesthesia_block_stop_datetime    | Anesthesia Block Stop Datetime                                                      |       |
+| or_case_schedule_encounters | anesthesia_ready_datetime         | Anesthesia Ready Datetime                                                           |       |
+| or_case_schedule_encounters | anesthesia_start_datetime         | Anesthesia Start DataTime                                                           |       |
+| or_case_schedule_encounters | anesthesia_stop_datetime          | Anesthesia Stop DataTime                                                            |       |
+| or_case_schedule_encounters | begin_to_close_datetime           | Procedure Begin to End Datetime                                                     |       |
+| or_case_schedule_encounters | dischg_datetime                   | Discharge DateTime                                                                  |       |
+| or_case_schedule_encounters | dressing_datetime                 | Dressing DateTime                                                                   |       |
+| or_case_schedule_encounters | ed_arrival_datetime               | Emergency Department Arrival Datetime                                               |       |
+| or_case_schedule_encounters | ed_dischg_datetime                | Emergency Department Discharge DateTime                                             |       |
+| or_case_schedule_encounters | ed_dischg_datetime_all            | Emergency Department Discharge DateTime All                                         |       |
+| or_case_schedule_encounters | ed_dischg_datetime_first          | Emergency Department Discharge DateTime First                                       |       |
+| or_case_schedule_encounters | incision_datetime                 | Incision DateTime                                                                   |       |
+| or_case_schedule_encounters | merged_admit_datetime             | Merged Encounters Admission Datetime                                                |       |
+| or_case_schedule_encounters | merged_dischg_datetime            | Merged Encounters Discharge DateTime                                                |       |
+| or_case_schedule_encounters | pacu_start_datetime               | Post-anesthesia Care Unit Start Datetime                                            |       |
+| or_case_schedule_encounters | pre_op_begin_datetime             | Preoperation Begin Datetime                                                         |       |
+| or_case_schedule_encounters | pre_op_end_datetime               | Preoperation End Datetime                                                           |       |
+| or_case_schedule_encounters | procedural_care_complete_datetime | Procedure Care Completion Datetime                                                  |       |
+| or_case_schedule_encounters | procedure_end_datetime            | Procedure End Datetime                                                              |       |
+| or_case_schedule_encounters | procedure_start_datetime          | Procedure Start Datetime                                                            |       |
+| or_case_schedule_encounters | ready_for_or_datetime             | Operation Ready Datetime                                                            |       |
+| or_case_schedule_encounters | room_end_datetime                 | Room of Surgery in Used End Datetime                                                |       |
+| or_case_schedule_encounters | room_start_datetime               | Room of Surgery in Used Start DateTime                                              |       |
+| or_case_schedule_encounters | sched_start_datetime              | Scheduled Start Datetime                                                            |       |
+| or_case_schedule_encounters | surgeon_in_datetime               | Surgeon In Datetime                                                                 |       |
+| or_case_schedule_encounters | surgeon_out_datetime              | Surgeon Out Datetime                                                                |       |
+| or_case_schedule_encounters | surgery_start_datetime            | Surgery Start Datetime                                                              |       |
+| or_case_schedule_encounters | surgery_stop_datetime             | Surgery Stop Datetime                                                               |       |
+| pain                        | pain_datetime                     | Pain Assessed DateTime                                                              |       |
+| prescribing                 | med_order_datetime                | Medication Order DateTime                                                           |       |
+| prescribing                 | med_order_end_datetime            | Medication Order End DateTime                                                       |       |
+| prescribing                 | med_order_start_datetime          | Medication Order Start DateTime                                                     |       |
+| realm                       | realm_datetime                    | Rapid Estimate of Adult Literacy in Medicine Test Performed DateTime                |       |
+| respiratory                 | respiratory_datetime              | Respiratory DateTime                                                                |       |
+| temperature                 | vitals_datetime                   | Temperature Recorded DateTime                                                       |       |
+| transfusions                | order_datetime                    | Order DateTime                                                                      |       |
+
+</details>
 
 ## Table relations
+<Image img={require('./tablerelations.png')} />
+
+:::tip
+All of tables are built based on subjects(Patients). 
+To filter sub-cohort of your project, please use **Encounters**, **or_case_schedule_cnounters** tables firstly to filter the subjects, and then merging with other tables to get full datasets.
+:::

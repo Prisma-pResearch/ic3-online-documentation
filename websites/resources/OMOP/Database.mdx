@@ -1,0 +1,22 @@
+---
+sidebar_position: 3
+title: OMOP CDM Database
+description: Architecture of OMOP CDM database
+---
+import Excel from '@site/src/components/files-excel/excel'
+import datas from '@site/static/meta_OMOP.json'
+
+export const ExcelShow = () => (
+   <div>
+      <Excel datas={datas} />
+    </div>
+);
+
+
+After OMOP ETL and mapping process, we will save the mapped records into databases. Either SQL Server, PostgreSQL will be good choises for data storage. 
+
+# Database Architecture
+
+[Download Complete Data Dictionary](./OMOP_CDMv5.4.1.xlsx)
+
+<ExcelShow/>

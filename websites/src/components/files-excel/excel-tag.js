@@ -2,7 +2,6 @@ import React from 'react'
 import styles from './styles.module.css';
 
 const ExcelTag = ({ Tag }) => {
-  console.log(Tag)
   return (
     <>
       {(() => {

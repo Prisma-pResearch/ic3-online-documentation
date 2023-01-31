@@ -8,7 +8,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 const config = {
   title: 'Intelligent Critical Care Center Online Documentation',
   tagline: 'We are idealists, problem-solvers, and explorers of digital health and AI',
-  url: 'https://ic3.center.ufl.edu',
+  url: 'https://ic3-online-document.netlify.app',
   baseUrl: '/',
   markdown: {
     mermaid: true,
@@ -19,9 +19,10 @@ const config = {
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'Prisma-pResearch', // Usually your GitHub org/user name.
-  projectName: 'IC3-Documentation', // Usually your repo name.
-
+  organizationName: 'Chesterguan', // Usually your GitHub org/user name.
+  projectName: 'ic3-online-documentation', // Usually your repo name.
+  deploymentBranch:'gh-pages',
+  trailingSlash: false,
   // Even if you don't use internalization, you can use this field to set useful
   // metadata like html lang. For example, if your site is Chinese, you may want
   // to replace "en" with "zh-Hans".
@@ -132,75 +133,75 @@ const config = {
             position: 'right',
           },
 
-          {
-            type: 'dropdown',
-            label: 'Name',
-            position: 'right',
-            items: [
+          // {
+          //   type: 'dropdown',
+          //   label: 'Name',
+          //   position: 'right',
+          //   items: [
 
-              {
-                type: 'html',
-                value: `                
-                <li style="
-               margin:10px 0px; 
-               font-weight: 500;  
-               height: 1.6rem;
-               padding: 3px 3px;
-               width:10rem;
-               text-align:center;
-               letter-spacing: 0px;
-               box-shadow: inset 0 0 10px 5px white;"
-                   onMouseOver="this.style.color = '#fcb045', this.style.fontWeight='800'" ,
-                   onMouseOut="this.style.color = '#000', this.style.fontWeight='500'">
-                   Settings
-                   <div
-                       style="margin: 2px auto; width: 6rem; height: 1px; background: -webkit-linear-gradient(left, rgba(255, 255, 255, 0.061) -4%,#1f4174 50%,rgba(255, 255, 255, 0) 100%);;">
-                   </div>
-               </li>`
-              },
-              {
-                type: 'html',
-                value: `                
-                <li style="
-                margin:10px 0px;  
-               font-weight: 500;  
-               height: 1.6rem;
-               padding: 3px 3px;
-               width:10rem;
-               text-align:center;
-               letter-spacing: 0px;
-               box-shadow: inset 0 0 10px 5px white;"
-                   onMouseOver="this.style.color = '#fcb045', this.style.fontWeight='800'" ,
-                   onMouseOut="this.style.color = '#000', this.style.fontWeight='500'">
-                   Message
-                   <div
-                       style="margin: 2px auto; width: 6rem; height: 1px; background: -webkit-linear-gradient(left, rgba(255, 255, 255, 0.061) -4%,#1f4174 50%,rgba(255, 255, 255, 0) 100%);;">
-                   </div>
-               </li>`
-              },
-              {
-                type: 'html',
-                value: `                
-                <li style="
-                margin:10px 0px; 
-               font-weight: 500;  
-               height: 1.6rem;
-               padding: 3px 3px;
-               width:10rem;
-               text-align:center;
-               letter-spacing: 0px;
-               box-shadow: inset 0 0 10px 5px white;"
-                   onMouseOver="this.style.color = '#fcb045', this.style.fontWeight='800'" ,
-                   onMouseOut="this.style.color = '#000', this.style.fontWeight='500'">
-                   Login out
-                   <div
-                       style="margin: 2px auto; width: 6rem; height: 1px; background: -webkit-linear-gradient(left, rgba(255, 255, 255, 0.061) -4%,#1f4174 50%,rgba(255, 255, 255, 0) 100%);;">
-                   </div>
-               </li>`
-              },
+          //     {
+          //       type: 'html',
+          //       value: `                
+          //       <li style="
+          //      margin:10px 0px; 
+          //      font-weight: 500;  
+          //      height: 1.6rem;
+          //      padding: 3px 3px;
+          //      width:10rem;
+          //      text-align:center;
+          //      letter-spacing: 0px;
+          //      box-shadow: inset 0 0 10px 5px white;"
+          //          onMouseOver="this.style.color = '#fcb045', this.style.fontWeight='800'" ,
+          //          onMouseOut="this.style.color = '#000', this.style.fontWeight='500'">
+          //          Settings
+          //          <div
+          //              style="margin: 2px auto; width: 6rem; height: 1px; background: -webkit-linear-gradient(left, rgba(255, 255, 255, 0.061) -4%,#1f4174 50%,rgba(255, 255, 255, 0) 100%);;">
+          //          </div>
+          //      </li>`
+          //     },
+          //     {
+          //       type: 'html',
+          //       value: `                
+          //       <li style="
+          //       margin:10px 0px;  
+          //      font-weight: 500;  
+          //      height: 1.6rem;
+          //      padding: 3px 3px;
+          //      width:10rem;
+          //      text-align:center;
+          //      letter-spacing: 0px;
+          //      box-shadow: inset 0 0 10px 5px white;"
+          //          onMouseOver="this.style.color = '#fcb045', this.style.fontWeight='800'" ,
+          //          onMouseOut="this.style.color = '#000', this.style.fontWeight='500'">
+          //          Message
+          //          <div
+          //              style="margin: 2px auto; width: 6rem; height: 1px; background: -webkit-linear-gradient(left, rgba(255, 255, 255, 0.061) -4%,#1f4174 50%,rgba(255, 255, 255, 0) 100%);;">
+          //          </div>
+          //      </li>`
+          //     },
+          //     {
+          //       type: 'html',
+          //       value: `                
+          //       <li style="
+          //       margin:10px 0px; 
+          //      font-weight: 500;  
+          //      height: 1.6rem;
+          //      padding: 3px 3px;
+          //      width:10rem;
+          //      text-align:center;
+          //      letter-spacing: 0px;
+          //      box-shadow: inset 0 0 10px 5px white;"
+          //          onMouseOver="this.style.color = '#fcb045', this.style.fontWeight='800'" ,
+          //          onMouseOut="this.style.color = '#000', this.style.fontWeight='500'">
+          //          Login out
+          //          <div
+          //              style="margin: 2px auto; width: 6rem; height: 1px; background: -webkit-linear-gradient(left, rgba(255, 255, 255, 0.061) -4%,#1f4174 50%,rgba(255, 255, 255, 0) 100%);;">
+          //          </div>
+          //      </li>`
+          //     },
    
-            ],
-          }
+          //   ],
+          // }
 
         ],
       },
@@ -212,15 +213,15 @@ const config = {
             items: [
               {
                 label: 'Projects',
-                to: '/docs/projects',
+                to: '/docs/category/featured-projects',
               },
               {
                 label: 'Datasets',
-                to: '/docs/datasets',
+                to: '/docs/category/datasets',
               },
               {
                 label: 'Tutorials',
-                to: '/docs/tutorials',
+                to: '/docs/category/tutorials',
               },
             ],
           },
