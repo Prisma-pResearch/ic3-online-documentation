@@ -40,7 +40,7 @@ const config = {
           sidebarPath: require.resolve('./sidebars.js'),
           showLastUpdateAuthor: true,
           showLastUpdateTime: true,
-          exclude: ['summary.mdx']
+          exclude: ['summary.mdx'],
         },
         blog: {
           showReadingTime: true,
