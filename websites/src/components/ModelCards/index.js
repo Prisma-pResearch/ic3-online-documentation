@@ -31,7 +31,7 @@ const TagsDict = {
 var FeatureList = [  // The meta info of the model cards
     {
       title: 'SOFA',
-      url: '/img/workspaces.png', // img should be small
+      url: 'https://i.ytimg.com/vi/fPZrt3WpAAk/maxresdefault.jpg', // img should be small
       description: (
         <>
           The online documentation is designed to transfer knowledge between our researchers.
@@ -43,7 +43,7 @@ var FeatureList = [  // The meta info of the model cards
     },
     {
       title: 'MySurgeryRisk',
-      url: '/img/projects.png',
+      url: 'https://assets.hellahealth.com/wp-content/uploads/sites/2/2022/07/14153656/surgery-risky-746x420.jpg',
       description: (
         <>
           Please feel free to use the <strong>search tool</strong> above to ask your questions. Answers will show up smoothly.
@@ -56,7 +56,7 @@ var FeatureList = [  // The meta info of the model cards
     },
     {
       title: 'AKI Phenotype',
-      url: '/img/datasets.png', 
+      url: 'https://media.springernature.com/lw685/springer-static/image/art%3A10.1186%2Fs13054-022-04121-x/MediaObjects/13054_2022_4121_Fig4_HTML.png', 
       description: (
         <>
           The documentation tool is built with <a href='https://docusaurus.io/'>Docusaurus</a> and maintained by IC3 DevOps. We will keep the documentation updated. 

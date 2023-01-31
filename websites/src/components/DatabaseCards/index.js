@@ -14,7 +14,7 @@ const FeatureList=[
         numEncounters:498769,
         numSurgeries:545824,
         isOMOP:'Enabled',
-        link:'/docs/datasets/IDEALIST'
+        link: '/ic3-online-documentation/docs/datasets/IDEALIST'
     },
     {
         title:'AKI EPIC 2',
@@ -23,7 +23,7 @@ const FeatureList=[
         numEncounters:529032,
         numSurgeries:221083,
         isOMOP:'Disabled',
-        link:'/docs/datasets/AKIEPIC2',
+        link:'/ic3-online-documentation/docs/datasets/AKIEPIC2',
     },
     {
         title:'Multimodal AI',
@@ -32,7 +32,7 @@ const FeatureList=[
         numEncounters:14743767,
         numSurgeries:0,
         isOMOP:'Enabled',
-        link:'/docs/datasets/MultimodalAI'
+        link:'/ic3-online-documentation/docs/datasets/MultimodalAI'
     },
     {
         title:'ChoRUS',
@@ -41,7 +41,7 @@ const FeatureList=[
         numEncounters:0,
         numSurgeries:0,
         isOMOP:'Disabled',
-        link:'/docs/datasets/Chorus'
+        link:'/ic3-online-documentation/docs/datasets/Chorus'
     },
 ]
 

@@ -6,7 +6,7 @@ import Feature from './feature';
 const FeatureList = [
   {
     title: 'Projects',
-    url: '/img/projects.png',
+    url: './img/projects.png',
     link:'/docs/category/featured-projects',
     description: (
       <>
@@ -16,7 +16,7 @@ const FeatureList = [
   },
   {
     title: 'Datasets',
-    url: '/img/datasets.png',
+    url: './img/datasets.png',
     link:'/docs/category/datasets',
     description: (
       <>
@@ -26,7 +26,7 @@ const FeatureList = [
   },
   {
     title: 'Workspaces',
-    url: '/img/workspaces.png',
+    url: './img/workspaces.png',
     link:'/docs/category/workspaces',
     description: (
       <>
