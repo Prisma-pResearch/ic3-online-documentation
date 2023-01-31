@@ -7,7 +7,7 @@ const FeatureList = [
   {
     title: 'Projects',
     url: './img/projects.png',
-    link:'/docs/category/featured-projects',
+    link:'/ic3-online-documentation/docs/category/featured-projects',
     description: (
       <>
         The project is the top view of the research.&nbsp;The documentation is written by project-wise. Knowledge is organized with the related projects.
@@ -17,7 +17,7 @@ const FeatureList = [
   {
     title: 'Datasets',
     url: './img/datasets.png',
-    link:'/docs/category/datasets',
+    link:'/ic3-online-documentation/docs/category/datasets',
     description: (
       <>
         Datasets are the key points of our research.&nbsp; We have prepared a large dataset for you and the data dictionary will lead you to the success.
@@ -27,7 +27,7 @@ const FeatureList = [
   {
     title: 'Workspaces',
     url: './img/workspaces.png',
-    link:'/docs/category/workspaces',
+    link:'/ic3-online-documentation/docs/category/workspaces',
     description: (
       <>
         Workspaces are the place where we play with the data. Pipelines, applications, microservice and model trainings are developed and deployed here.
