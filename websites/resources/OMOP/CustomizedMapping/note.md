@@ -2,7 +2,7 @@
 
 ### Reading from lab_notes_clean_0_0.csv
 
-![](../md_files/image30.png)
+![](../md_files/image34.png)
 
 | Destination Field | Source field | Logic | Comment field |
 | --- | --- | --- | --- |

@@ -2,7 +2,7 @@
 
 ### Reading from meds_clean_0_0.csv
 
-![](../md_files/image32.png)
+![](../md_files/image35.png)
 
 | Destination Field | Source field | Logic | Comment field |
 | --- | --- | --- | --- |
