@@ -1,3 +1,7 @@
+---
+sidebar_position: 7
+---
+
 ## Table name: payer_plan_period
 
 ### Reading from encounters_clean_0_0.csv

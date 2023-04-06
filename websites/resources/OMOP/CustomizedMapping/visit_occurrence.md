@@ -1,3 +1,7 @@
+---
+sidebar_position: 2
+---
+
 ## Table name: visit_occurrence
 
 ### Reading from encounters_clean_0_0.csv

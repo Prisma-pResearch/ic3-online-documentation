@@ -1,3 +1,7 @@
+---
+sidebar_position: 8
+---
+
 ## Table name: death
 
 ### Reading from ssdi2_clean_0_0.csv

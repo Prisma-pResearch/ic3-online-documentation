@@ -1,3 +1,7 @@
+---
+sidebar_position: 1
+---
+
 ## Table name: person
 
 ### Reading from encounters_clean_0_0.csv

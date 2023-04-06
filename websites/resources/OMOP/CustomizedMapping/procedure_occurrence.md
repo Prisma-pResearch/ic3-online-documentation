@@ -1,3 +1,7 @@
+---
+sidebar_position: 7
+---
+
 ## Table name: procedure_occurrence
 
 ### Reading from procedures_clean_0_0.csv

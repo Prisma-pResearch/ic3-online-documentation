@@ -1,3 +1,7 @@
+---
+sidebar_position: 4
+---
+
 ## Table name: observation
 
 ### Reading from encounters_clean_0_0.csv

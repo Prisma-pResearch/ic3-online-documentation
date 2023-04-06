@@ -1,3 +1,7 @@
+---
+sidebar_position: 10
+---
+
 ## Table name: location_history
 
 ### Reading from encounters_clean_0_0.csv

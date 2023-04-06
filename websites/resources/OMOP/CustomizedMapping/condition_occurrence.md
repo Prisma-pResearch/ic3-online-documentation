@@ -1,3 +1,7 @@
+---
+sidebar_position: 6
+---
+
 ## Table name: condition_occurrence
 
 ### Reading from diagnoses_clean_0_0.csv

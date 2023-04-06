@@ -1,3 +1,7 @@
+---
+sidebar_position: 8
+---
+
 ## Table name: drug_exposure
 
 ### Reading from meds_clean_0_0.csv

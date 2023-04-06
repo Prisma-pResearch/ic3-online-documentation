@@ -1,3 +1,7 @@
+---
+sidebar_position: 11
+---
+
 ## Table name: note
 
 ### Reading from lab_notes_clean_0_0.csv
