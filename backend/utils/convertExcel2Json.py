@@ -82,10 +82,12 @@ def convert(folderPath:str , isOMOP:bool = False):
     CategoriesTables = Categories_Table if not isOMOP else Categories_Table_OMOP
 
     for k,v in CategoriesTables.items():
-        _tempDict = {
-            "Category_name" : k,
-            "Columns" : categories[k]
-        }
+
+        if(k in categories):
+            _tempDict = {
+                "Category_name" : k,
+                "Columns" : categories[k]
+            }
         allInfo.append(_tempDict)
 
     with open(f'./meta_{_databaseName}.json', 'w+') as f:
@@ -93,4 +95,4 @@ def convert(folderPath:str , isOMOP:bool = False):
 
 
 
-convert('./OMOP', isOMOP=True)
+convert('./APARI', isOMOP=True)
