@@ -38,21 +38,27 @@ def convert(folderPath:str , isOMOP:bool = False):
 
     _table = pd.read_excel(f'{folderPath}\TableInfo.xlsx')
     _table = _table.applymap(str)
+    _table.drop_duplicates(inplace=True)
 
     # ### parser all table information
     _columns = pd.read_excel(f'{folderPath}\ColumnInfo.xlsx')
     _columns = _columns.applymap(str)
+    _columns.drop_duplicates(inplace=True)
     _columns.fillna('')
     _columns.rename(columns={'COLUMN_NAME':'Column_name','COLUMN_TYPE':'Column_Type', 'COLUMN_DESCRIPTION':'Description'}, inplace=True)
     _columns['Indicators'] = _columns.apply(lambda x : parserIndicators(x), axis= 1)
     _columns['Required'] = 'Yes' if 'isRequired' not in _columns.columns else _columns['isRequired']
-
+    
+    _tableNames = _columns['TABLE_NAME'].unique()
 
     categories = {}
 
     ### parser all categories information
     for index, row in _table.iterrows():
+        if( not row['Table Name'] in _tableNames):
+            continue
 
+        print(row['Table Name'])
         _category = row['Table Category']
         _tempDict = {
             'Table_name': row['Table Name'],
@@ -60,38 +66,37 @@ def convert(folderPath:str , isOMOP:bool = False):
             "Tags": row['Tags'].split(';') if row['Tags'] != '' else '' 
         }
 
-        ## get list of table names from columns 
-        _tableNames = _columns['TABLE_NAME'].unique()
-        if(row['Table Name'] in _tableNames):
-            _columnTable = _columns.loc[_columns['TABLE_NAME'] == row['Table Name']][['Column_name','Column_Type','Description','Indicators','Required']]
-            _columnTableLists = _columnTable.to_dict('records')
 
-            for item in _columnTableLists:
-                item['Data'] = []
-                item['Indicators'] = item['Indicators'].split(";") if item['Indicators'] != "" else []
-            
-            ## Add columns to table
-            _tempDict['Columns'] = _columnTableLists
+        _columnTable = _columns.loc[_columns['TABLE_NAME'] == row['Table Name']][['Column_name','Column_Type','Description','Indicators','Required']]
+        _columnTableLists = _columnTable.to_dict('records')
 
-            _tempArray = []
-            if _category in categories:
-                _tempArray = categories[_category]
-            
-            _tempArray.append(_tempDict)
-            categories[_category] =  _tempArray
+        for item in _columnTableLists:
+            item['Data'] = []
+            item['Indicators'] = item['Indicators'].split(";") if item['Indicators'] != "" else []
+        
+        ## Add columns to table
+        _tempDict['Columns'] = _columnTableLists
+
+        _tempArray = []
+        if _category in categories:
+            _tempArray = categories[_category]
+        
+        _tempArray.append(_tempDict)
+        categories[_category] =  _tempArray
+
 
     allInfo = []
 
     CategoriesTables = Categories_Table if not isOMOP else Categories_Table_OMOP
 
-    for k,v in CategoriesTables.items():
+    for k in CategoriesTables:
 
         if(k in categories):
             _tempDict = {
                 "Category_name" : k,
                 "Columns" : categories[k]
             }
-        allInfo.append(_tempDict)
+            allInfo.append(_tempDict)
 
     with open(f'./meta_{_databaseName}.json', 'w+') as f:
         json.dump(allInfo, f)
