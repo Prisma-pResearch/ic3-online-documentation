@@ -60,22 +60,25 @@ def convert(folderPath:str , isOMOP:bool = False):
             "Tags": row['Tags'].split(';') if row['Tags'] != '' else '' 
         }
 
-        _columnTable = _columns.loc[_columns['TABLE_NAME'] == row['Table Name']][['Column_name','Column_Type','Description','Indicators','Required']]
-        _columnTableLists = _columnTable.to_dict('records')
+        ## get list of table names from columns 
+        _tableNames = _columns['TABLE_NAME'].unique()
+        if(row['Table Name'] in _tableNames):
+            _columnTable = _columns.loc[_columns['TABLE_NAME'] == row['Table Name']][['Column_name','Column_Type','Description','Indicators','Required']]
+            _columnTableLists = _columnTable.to_dict('records')
 
-        for item in _columnTableLists:
-            item['Data'] = []
-            item['Indicators'] = item['Indicators'].split(";") if item['Indicators'] != "" else []
-        
-        ## Add columns to table
-        _tempDict['Columns'] = _columnTableLists
+            for item in _columnTableLists:
+                item['Data'] = []
+                item['Indicators'] = item['Indicators'].split(";") if item['Indicators'] != "" else []
+            
+            ## Add columns to table
+            _tempDict['Columns'] = _columnTableLists
 
-        _tempArray = []
-        if _category in categories:
-            _tempArray = categories[_category]
-        
-        _tempArray.append(_tempDict)
-        categories[_category] =  _tempArray
+            _tempArray = []
+            if _category in categories:
+                _tempArray = categories[_category]
+            
+            _tempArray.append(_tempDict)
+            categories[_category] =  _tempArray
 
     allInfo = []
 
