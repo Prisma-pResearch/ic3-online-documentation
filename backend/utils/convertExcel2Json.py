@@ -95,4 +95,4 @@ def convert(folderPath:str , isOMOP:bool = False):
 
 
 
-convert('./APARI', isOMOP=True)
+convert('./CHORUS', isOMOP=False)

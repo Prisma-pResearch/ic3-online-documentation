@@ -1,0 +1,23 @@
+---
+sidebar_position: 5
+title: Chorus datasets
+description: datasets for Chorus
+---
+import Excel from '@site/src/components/files-excel/excel'
+import datas from '@site/static/meta_CHORUS.json'
+
+export const ExcelShow = () => (
+   <div>
+      <Excel datas={datas} />
+    </div>
+);
+
+
+## Datasets Introduction
+Retrospective temporal dataset for adult patients who underwent inpatient surgical procedure at UFH between 1/1/2012 and 10/15/2020.
+## Status
+The datasets are ready for sampling. An updatd data dictionary will be available soon.
+
+[Download Complete Data Dictionary](./UF_data_dictionary.xlsx)
+
+<ExcelShow/>
