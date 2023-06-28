@@ -19,8 +19,8 @@ const homepagelists = [
     {
       Title: 'Workspace',
       List: [
-        { name: 'HiPerGator', update: "2022-10"},
-        { name: 'IC3-Servers', update: "2022-12"},
+        { name: 'HiPerGator', update: "2023-06-28", link: "/docs/workspaces/HiPerGator"},
+        { name: 'IC3-Servers', update: "2023-06-28", link: "/docs/workspaces/Servers"},
 
       ]
     },

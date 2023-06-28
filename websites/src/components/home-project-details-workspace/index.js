@@ -2,7 +2,7 @@ import React from 'react'
 import Link from '@docusaurus/Link';
 import styles from './styles.module.css';
 
-const WorkspaceBox = ({ Title, LinkTo, Update, NumPatients, NumSurgeries }) => {
+const WorkspaceBox = ({ Title, LinkTo, Update}) => {
     return (
       <Link  to={LinkTo} style={{textDecorationLine: "none", alignItems:"center"}}>
       <div className={` ${styles.featureDatasetBox}`}>
