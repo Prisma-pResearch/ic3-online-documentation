@@ -41,6 +41,8 @@ const config = {
           showLastUpdateAuthor: true,
           showLastUpdateTime: true,
           exclude: ['summary.mdx'],
+          editUrl:
+            'https://github.com/Prisma-pResearch/ic3-online-documentation/edit/main/websites/',
         },
         blog: {
           showReadingTime: true,
@@ -48,6 +50,8 @@ const config = {
           blogTitle: 'Innovative Ideas!',
           blogDescription: 'Innovative ideas and discovers',
           blogSidebarTitle: 'Latest posts',
+          editUrl:
+            'https://github.com/Prisma-pResearch/ic3-online-documentation/edit/main/websites/',
         },
         theme: {
           customCss: [require.resolve('./src/css/custom.scss')],//,require.resolve('./src/css/blog-layout.scss')
