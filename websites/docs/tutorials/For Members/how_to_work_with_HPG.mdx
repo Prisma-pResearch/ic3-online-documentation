@@ -1,0 +1,67 @@
+# Working with HiPerGator
+
+[HiPerGator](https://www.rc.ufl.edu/get-started/hipergator/) is a supercomputer at the University of Florida. It is a cluster of computers that can be used for high performance computing.
+
+The main purpose of HiPerGator is to provide a extremely powerful computing environment for researchers at UF. For IC<sup>3</sup>, we will mostly apply HiPerGator to:
+- run our large-scale data processing pipelines, ETL pipelines and data analysis pipelines
+- train and evaulate our machine learning models
+- deploy our data commons and data services
+
+
+:::tip Note
+*This document will focus on how to use HiPerGator efficiently, and try to provide the sample codes and templates to run your own projects. To learn more details about HiPerGator, please refer to [HiPerGator Documentation](https://help.rc.ufl.edu/doc/UFRC_Help_and_Documentation)*
+:::
+
+import Image from '@theme/IdealImage';
+import HPG_arch_img from '@site/static/img/hpc-architecture.png';
+
+## HiPerGator Architecture
+
+> this is a simplified version for easy understanding
+
+<Image img={HPG_arch_img} />
+
+The HiPerGator cluster consists of a number of compute nodes, a number of login nodes, and a number of storage nodes. **The compute nodes are where the actual computation happens.** 
+The login nodes are where you log in to the cluster and submit jobs to the compute nodes. The storage nodes are where the data is stored.
+
+## HiPerGator Access
+
+There are multiple ways to login into HiPerGator. 
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<Tabs>
+  <TabItem value="SSH" label="SSH" default>
+
+To login to HiPerGator directly, you need to use SSH.
+```bash
+ssh <username>@hpg.rc.ufl.edu
+```
+
+  </TabItem>
+  <TabItem value="UFRC JupyterHub" label="Jupyter">
+
+To work with Jupyter server directly. <br/>
+Please refer to the detailed documentation [here](https://help.rc.ufl.edu/doc/Jupyter_Notebooks) to learn how to use JupyterHub on HiPerGator.
+
+  </TabItem>
+  <TabItem value="OnDemand" label="OnDemand">
+
+This is a recommended way to apply with HiPerGator interatively. <br/>
+Please refer to the detailed documentation [here](https://help.rc.ufl.edu/doc/Open_OnDemand) to learn how to use OnDemand on HiPerGator.
+  </TabItem>
+  
+</Tabs>
+
+
+## HiPerGator File System
+
+- **Home Directory** - `/home/<username>`, it's used mainly for storing your personal files, please do not store large files here.
+- **Blue Storage** - `/blue/<groupName>`, it's used for storing high performance data, <u>please store your codes and results here</u>. 
+- **Orange Storage** - `/orange/<groupName>`, it's used for storing archive or backup data, please do not store your codes and results here.
+
+## HiPerGator resources and quotas
+
+
+## How to use Slurm

@@ -27,8 +27,9 @@
 * Submit [Release](https://docs.github.com/en/repositories/releasing-projects-on-github/about-releases) refer to project's progress. Repository admin should set up the release plan. 
 * Look into [Submodules](https://git-scm.com/book/en/v2/Git-Tools-Submodules), submodules are useful to create clean repository when multiple related respositories are included.
 
-> [!ATTENTION]
-> **Fork** to personal account is not recommended.
+:::warning
+**Fork** to personal account is not recommended.
+::: 
 
 
 ## How to use Github Project(beta)
@@ -44,6 +45,7 @@ There are two use cases here :
 ## How to use Github Project(classic)
 [Github Project(classic)](https://docs.github.com/en/issues/organizing-your-work-with-project-boards/managing-project-boards/about-project-boards) is also named as 'Project(board)'. Project boards helps organize and prioritize jobs. We could create project boards for specific feature work, comprehensive roadmaps, or even release checklists. 
 
-> [!TIP]
-> We recommend to create the project(board) for old/existed project to assign new jobs or fix issues. <u>The feature should be replaced soon with Projects(beta)</u>.
 
+:::tip
+We recommend to create the project(board) for old/existed project to assign new jobs or fix issues. <u>The feature should be replaced soon with Projects(beta)</u>.
+::: 
