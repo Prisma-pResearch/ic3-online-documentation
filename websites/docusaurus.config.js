@@ -289,6 +289,10 @@ const config = {
       liveCodeBlock: {
         playgroundPosition: 'bottom',
       },
+      colorMode:{
+        defaultMode: 'light',
+        disableSwitch: true
+      },
     }),
 };
 

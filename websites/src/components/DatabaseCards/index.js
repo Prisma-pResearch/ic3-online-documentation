@@ -9,7 +9,9 @@ import { Col, Row, Statistic, Card, Divider } from 'antd';
 const FeatureList=[
     {
         title:'IDEALIST',
-        description:'2012-2020 Surgical Patients',
+        description:'Surgical Patients admitted to UF Health (GNV+JAX)',
+        updatedTime: '2022/11/03', 
+        timeRange: '2012/01/01 - 2020/10/15',
         numPatients:254979,
         numEncounters:498769,
         numSurgeries:545824,
@@ -18,7 +20,9 @@ const FeatureList=[
     },
     {
         title:'AKI EPIC 2',
-        description:'2012-2019 Hospitalized Patients',
+        description:'Hospitalized Patients admitted to UF Health (GNV)',
+        updatedTime: '2019/10/15', 
+        timeRange: '2012/01/01-2019/08/22',
         numPatients:156699,
         numEncounters:529032,
         numSurgeries:221083,
@@ -26,34 +30,50 @@ const FeatureList=[
         link:'/ic3-online-documentation/docs/datasets/AKIEPIC2',
     },
     {
-        title:'Multimodal AI',
-        description:'2012-2027 Hospitalized Patients',
+        title:'Inpatient Database',
+        description:'Hospitalized Patients admitted to UF Health (All Sites)', 
+        updatedTime: '2023/09/15', 
+        timeRange: '2012/01/01-2023/07/31',
         numPatients:351022,
         numEncounters:14743767,
-        numSurgeries:0,
+        numSurgeries: 'in processing',
         isOMOP:'Enabled',
-        link:'/ic3-online-documentation/docs/datasets/MultimodalAI'
+        link:'/ic3-online-documentation/docs/datasets/InpatientDatabase'
     },
     {
         title:'ChoRUS',
-        description:'2022-2026 Hospitalized Patients',
+        description:'Selected ICU Patients from Inpatient Database',
+        updatedTime: '2023/09/15', 
+        timeRange: 'Dynamic selection',
         numPatients:0,
         numEncounters:0,
         numSurgeries:0,
-        isOMOP:'Disabled',
+        isOMOP:'Enabled',
         link:'/ic3-online-documentation/docs/datasets/Chorus'
     },
 ]
 
-function Feature({title, description, numPatients, numEncounters, numSurgeries, isOMOP, link }) {
+function Feature({title, description, updatedTime, timeRange, numPatients, numEncounters, numSurgeries, isOMOP, link }) {
   const omopFlag = isOMOP.includes("Enabled");
   const icon = omopFlag?<SmileOutlined/>:<FrownOutlined/>;
-  const wordColor = omopFlag?'#3f8600':'#cf1322';
-
+ 
     return (
       <div style={{'margin-right':'2rem', 'margin-top':'1rem'}}>
-        <Card hoverable title={title} bordered={true} style={{width:400}} type='inner' extra=<a href={link}>Details</a>>
+        <Card hoverable title={title} bordered={true} style={{width:425}} type='inner' extra=<a href={link}>Details</a>>
         <p>{description}</p>
+        <Row gutter={16}>
+            <Col span={10}>
+            <Statistic title="Updated Time" value={updatedTime} valueStyle={{
+              fontSize: 16
+            }}/>
+            </Col>
+            <Col span={14}>
+            <Statistic title="Time Range" value={timeRange} valueStyle={{
+              fontSize: 16
+            }}/>
+            </Col>
+        </Row>
+       <Divider />
         <Row gutter={16}>
             <Col span={12}>
             <Statistic title="Num of patients" value={numPatients} />
@@ -66,7 +86,7 @@ function Feature({title, description, numPatients, numEncounters, numSurgeries, 
             </Col>
             <Col span={12}>
             <Statistic title="OMOP version" value={isOMOP} prefix= {icon} valueStyle={{
-              color: {wordColor}, // TODO: why not working ?
+              color: omopFlag? '#3f8600':'#cf1322',
             }} />
             </Col>
             <Col></Col>
