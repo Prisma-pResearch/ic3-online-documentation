@@ -34,6 +34,7 @@ We are planning to deploy the Kubernetes within the servers.
 * Find GPU information: `nvidia-smi -L`
 * Find RAM information: `free -g -t -o`
 * Find Disk information: `lsblk -d -o name,rota,size`
+* List RAM usage in MB ascendingly: `ps aux  | awk '{print $6/1024 " MB\t\t" $11}'  | sort -n`
 > rota:1, HDD; rota:0, SSD
 
 </details>
