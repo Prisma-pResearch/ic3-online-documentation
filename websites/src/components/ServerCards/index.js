@@ -11,22 +11,22 @@ import { Card } from 'antd';
 const FeatureList = [
   {
     title: 'TestBed Server',
-    os:'Ubuntu 14.04.6 LTS',
+    os:'Ubuntu 20.04.6 LTS',
     ip:'10.14.132.154',
     'domain':'mysurgeryrisk.ahc.ufl.edu',
     cpuType: 'Intel(R) Xeon(R) CPU E5-2640 v3 @ 2.60GHz',
     cpuNum:'32',
     gpuType: 'NVIDIA GTX Titan X',
     gpuNum: '4',
-    ram:'135',
+    cudaV: '12.2',
+    ram:'125',
     diskH:'8',
     diskS:'0.5',
-    status:'RAM replacement required',
+    status:'In working now',
     link:'#',
     description: (
       <>
         The server is mainly applied for <strong>testing and educational</strong> purpose.<br />
-        Currently, MySurgeryRisk Web Application is deployed in this server.
       </>
     ),
   },
@@ -39,6 +39,7 @@ const FeatureList = [
     cpuNum:'32',
     gpuType: '',
     gpuNum: 'N/A',
+    cudaV: 'N/A',
     ram:'376',
     diskH:'72',
     diskS:'4',
@@ -59,6 +60,7 @@ const FeatureList = [
     cpuNum:'72',
     gpuType: 'NVIDIA Quadro RTX 6000',
     gpuNum: '4',
+    cudaV: '11.4',
     ram:'763',
     diskH:'0',
     diskS:'31.2',
@@ -73,7 +75,7 @@ const FeatureList = [
   },
 ];
 
-function Feature({title, description,ip,domain, os, cpuType, cpuNum,gpuType, gpuNum, ram, diskH, diskS,link,status}) {
+function Feature({title, description,ip,domain, os, cpuType, cpuNum,gpuType, gpuNum, cudaV, ram, diskH, diskS,link,status}) {
   const isWorking = status.includes("working");
   return (
     <div>
@@ -81,7 +83,7 @@ function Feature({title, description,ip,domain, os, cpuType, cpuNum,gpuType, gpu
         <p>{description}</p>
         <h5>IP: {ip} &nbsp; &nbsp; &nbsp; Domain: {domain} &nbsp; &nbsp; &nbsp; OS: {os}</h5>
         <h5>CPU: {cpuNum} cores {cpuType}</h5>
-        <h5>GPU: {gpuNum} cores {gpuType}</h5>
+        <h5>GPU: {gpuNum} cores {gpuType} | CUDA version: {cudaV}</h5>
         <h5>RAM: {ram}(GB) &nbsp; &nbsp; &nbsp; Storage: {diskH}(TB) HDD &nbsp;{diskS}(TB) SSD </h5>
         <h4 style={isWorking?{color:'green'}:{color:'red'}}>{status}</h4>
     </Card>
