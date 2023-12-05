@@ -43,11 +43,11 @@ const FeatureList=[
     {
         title:'ChoRUS',
         description:'Selected ICU Patients from Inpatient Database',
-        updatedTime: '2023/09/15', 
+        updatedTime: '2023/11/15', 
         timeRange: 'Dynamic selection',
-        numPatients:0,
-        numEncounters:0,
-        numSurgeries:0,
+        numPatients:1263,
+        numEncounters:1316,
+        numSurgeries: 'N/A',
         isOMOP:'Enabled',
         link:'/ic3-online-documentation/docs/datasets/Chorus'
     },

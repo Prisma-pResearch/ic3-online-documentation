@@ -11,16 +11,28 @@ export const FeatureList=[
         icon: <SmileOutlined />
     },
     {
-        timestamp:'2023-01-31',
-        color:'blue',
-        task:'Get Sample Multimodal AI data (version2)',
-        icon: <ClockCircleOutlined />
-    },
-    {
         timestamp:'2023-02-20',
-        color:'blue',
+        color:'green',
         task:'Finish the OMOP mapping of Multimodal AI datasets',
+        icon: <SmileOutlined />
+    }, 
+    {
+        timestamp:'2023-09-30',
+        color:'blue',
+        task:'External Dataset OMOPatization: Start MIMIC V OMOP testing',
         icon: <ClockCircleOutlined />
+    }, 
+    {
+        timestamp:'2023-10-20',
+        color:'green',
+        task:'Start testing Auditing and Data Quality Control tools',
+        icon: <ClockCircleOutlined />
+    }, 
+    {
+        timestamp:'2023-11-10',
+        color:'blue',
+        task:'Inpatient database (EHR) is ready for internal usage',
+        icon: <SmileOutlined />
     }, 
 ]
 

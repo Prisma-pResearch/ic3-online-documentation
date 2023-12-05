@@ -4,7 +4,9 @@ title: IC3 HiPerGator Workspace
 description: IC3 owned HiPerGator Groups
 ---
 
-## [HiPerGator](https://www.rc.ufl.edu/about/hipergator/)
+## [PrismaP HiPerGator Resource Access Control](https://uflorida-my.sharepoint.com/:x:/g/personal/ziyuan_guan_ufl_edu/EWPDpCevWctCjbCDwCFENscBBdg0ViFoAyds30vz-41w_A?e=mvV3c5)
+
+## [Introduction](https://www.rc.ufl.edu/about/hipergator/)
 The University of Florida supercomputer is a cluster that includes the latest generation of processors and offers nodes for memory-intensive computation. HiPerGator’s high-performance storage systems can be accessed from diverse interfaces, including Globus, UFApps for Research, and other tools.
 
 UFIT Research Computing maintains the cluster and its many parts, allowing researchers to focus on their research instead of hardware and software maintenance.
@@ -13,7 +15,7 @@ HiPerGator workspaces are separated by `groups` to isolate separated projects an
 IC<sup>3</sup> center has **4** groups right no
 
 
-## Groups
+## Allocated Groups
 
 ### `prismap-datatrust` group
 The resources are allocated for PrismaP grants and projects. The user group takes charge of PrismaP retrospective datasets and database service. **Data Trust**. 
