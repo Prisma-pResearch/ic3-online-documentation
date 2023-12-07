@@ -1,0 +1,47 @@
+---
+sidebar_position: 3
+title: Safely mount DOM NAS folder
+description: Tutorials to mount NAS folder to your laptop or PC
+---
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+To work remotely or use your own devices to access the DOM NAS folder, you can mount the NAS folders to your device.
+
+:::tip
+Please make sure you are the only personnel to use/access the NAS folder. IF the device is shared, please disconnect the NAS folders when you log out.
+:::  
+
+## Instructions
+
+**please make sure connect with UF Health VPN firstly. **
+
+:::info UF Health VPN
+A[UF Health VPN](/docs/tutorials/For%20Members/connectWithUFHealthVPN.mdx) is **necessary** to build the connection.
+:::
+
+
+<Tabs>
+<TabItem value="Windows" label="Windows Device">
+
+- Open file explorer and go to "My Computer." 
+- Right click anywhere in the "My Computer" window and select "add network location" from the drop-down list. 
+- A window will pop up asking you where you would like to create your network location. Select "Choose a custom location." 
+- In the input box that comes up, type in \\AHCDFS.AHC.ufl.edu\files\DOM\SHARE 
+> The login account is : UFAD\userName (eg. UFAD\ziyuan.guan) 
+> The password is : gatorlink password 
+
+- Name your new location as you wish and proceed to the final window. Click "Finish." 
+
+</TabItem>
+<TabItem value="Mac/Linux" label="MacOS / Linux">
+
+Follow this guide on connecting to shared drives on Mac: https://support.apple.com/en-us/HT204445 
+- Click File Manager 
+- Click Connect-to-Server 
+- The URL is `smb://AHCDFS.AHC.ufl.edu/files/DOM/SHARE`
+> The login account is : UFAD\userName (eg. UFAD\ziyuan.guan) 
+> The password is : gatorlink password 
+
+</TabItem>
+</Tabs>
