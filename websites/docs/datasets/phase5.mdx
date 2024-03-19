@@ -1,0 +1,49 @@
+---
+sidebar_position: 8
+title: Phase 5
+description: Details of Phase 5 pipeline workflow
+---
+import Image from '@theme/IdealImage';
+import lowlevelImg from './Images/lowlevelphase1.png';
+import seqImg from './Images/phase1seq.png';
+
+<div style={{ textAlign: 'justify' }}>
+
+## Python Code Details
+Below are the codes involved in this phase for processing healthcare data, focusing on variable generation, residency insights, CKD classification, comorbidity analysis, laboratory data handling, and medication information, each enhancing patient datasets with critical health metrics and insights.
+
+## > variable_generation_for_batches.py
+
+This script streamlines the creation of variables from large datasets by dividing them into manageable batches and processing these in parallel, ensuring both efficiency and accuracy in data analysis tasks.
+
+#### WORKFLOW
+
+<details>
+<summary>Initialization</summary>
+
+- Import Modules and Functions for data processing
+- Set up initial parameters including identifiers (pid, eid), directory paths (dir_dict), project details (project_name, max_workers), and various column names relevant to the data processing task.
+- Trigger 'get_batches_from_directory' function to get batches and Segments the data into manageable batches for processing.
+
+</details>
+<details>
+<summary>Process Batches</summary>
+
+- For each batch in the batches list:
+    - Check if the batch has been processed.
+        - Look for the existence of success_path.
+        - If Not Processed:
+            - Prepare common_kwargs: Create a dictionary with shared parameters.
+            - Tailor Arguments for Current Batch: Customize the common_kwargs for the specifics of the batch.
+            - Append to kwargs_list: Add the tailored arguments to kwargs_list.
+
+</details>
+
+<details>
+<summary>Parallel Processing</summary>
+
+- Run 'run_function_in_parallel_v2' function with options Either variable_generation_omop_adapter or generate_all_variables to Processes multiple batches simultaneously, leveraging parallel computing for efficiency.
+- Ensures all batches have been processed correctly and verifies the integrity of the process.
+
+</details>
+</div>
