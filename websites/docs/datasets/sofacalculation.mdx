@@ -1,0 +1,95 @@
+---
+sidebar_position: 7
+title: Phase 4 - SOFA Score Calculation
+description: Details of SOFA Score pipeline workflow
+---
+import Image from '@theme/IdealImage';
+import idrSOFAImg from './Images/idrsofa.png';
+import omopSOFAImg from './Images/omopsofa.png';
+
+<div style={{ textAlign: 'justify' }}>
+
+## Python Code Details
+Below are the codes involved in this phase for calculating **SOFA** Score.
+## >  IDR_SOFA.py
+
+This script calculates the Sequential Organ Failure Assessment (SOFA) score, which is a metric used in the medical field to assess the extent of a patient's organ function or rate of failure. 
+
+#### WORKFLOW
+
+<details>
+<summary>
+Data Preparation and Extraction</summary>
+ The script imports necessary libraries and defines functions to process and extract relevant clinical data. This data includes blood pressure measurements, Glasgow Coma Scale (GCS) scores, respiratory data, laboratory results, and medication information.
+</details>
+<details>
+<summary>Determine Mechanical Ventilation Status</summary>
+Function  ‘determine_mv’, is used to ascertain the mechanical ventilation status of patients. This involves analyzing respiratory data to identify patients who are under mechanical ventilation based on specific criteria.
+</details>
+<details>
+<summary>Calculate SOFA Score</summary>
+
+Function ‘calculate_sofa’, orchestrates the SOFA score calculation. It involves several steps:
+
+- Extracting and processing various clinical parameters such as mean arterial pressure (MAP), GCS score, respiratory data (like FiO2 and SpO2), and laboratory results (bilirubin, platelets, creatinine, PaO2).
+- Determining the use of vasopressors and the status of mechanical ventilation.
+- Calculating individual components of the SOFA score, which assess different organ systems: cardiovascular, respiratory, hepatic, coagulation, neurological, and renal.
+- Aggregating these components to compute the overall SOFA score for each patient.
+- Data Aggregation and Resampling: The script aggregates the data over time, resampling it to align with specific time intervals. This step is crucial for tracking the progression of organ failure over time.
+
+</details>
+
+<details>
+<summary>Output Generation</summary>
+The final output is a DataFrame that contains the calculated SOFA scores for each patient, which can be used for clinical assessment and decision-making.
+</details>
+
+## Flowchart of Idr_sofa.py
+<Image img={idrSOFAImg} />
+
+
+## >  OMOP_SOFA.py
+
+This script calculates SOFA (Sequential Organ Failure Assessment) scores using data from an OMOP (Observational Medical Outcomes Partnership) database. 
+
+#### WORKFLOW
+<details>
+<summary>
+Database Connection and Data Retrieval</summary>
+The script connects to an OMOP database using SQL queries. It retrieves relevant clinical data required for SOFA score calculation. This includes data from various tables like visit_occurrence, measurement, drug_exposure, and device_exposure.
+</details>
+
+<details>
+<summary>
+Data Preparation and Processing</summary>
+The script processes the retrieved data to prepare it for SOFA score calculation. This involves creating temporary tables, checking and creating lookup tables, and ensuring data consistency and correctness.
+</details>
+<details>
+<summary>Calculation of Individual SOFA Components</summary>
+
+The script calculates individual components of the SOFA score, which assess different organ systems. This includes:
+
+- Renal score (based on creatinine levels or urine output)
+- Hepatic score (based on bilirubin levels)
+- Coagulation score (based on platelet count)
+- Cardiovascular score (based on blood pressure and use of vasopressors)
+- Respiratory score (based on PaO2/FiO2 ratio and mechanical ventilation status)
+- Central Nervous System score (based on the Glasgow Coma Scale)
+- Tabulation of eSOFA Score: The script includes the calculation of an extended version of the SOFA score, known as eSOFA, which might include additional parameters or modified criteria.
+
+</details>
+
+
+<details>
+<summary>Aggregation and Resampling of Data</summary>
+Similar to idr_sofa.py, this script aggregates and resamples the data over specific time intervals. This is important for monitoring the progression of organ failure over time.
+</details>
+<details>
+<summary>Output Generation</summary>
+The output is a DataFrame containing the calculated SOFA and eSOFA scores for each patient visit in the database. This data is crucial for clinical assessments and can be used for research or healthcare analytics.
+</details>
+
+## Flowchart of omop_sofa.py
+<Image img={omopSOFAImg}/>
+
+</div>
