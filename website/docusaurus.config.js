@@ -111,7 +111,7 @@ const config = {
         path: 'pages/datasets',
         routeBasePath: 'datasets',
         breadcrumbs: true,
-        sidebarPath: require.resolve('./sidebars/sidebars-auto.js'),
+        sidebarPath: require.resolve('./sidebars/sidebars-datasets.js'),
         showLastUpdateAuthor: true,
         showLastUpdateTime: true,
       }),
@@ -124,7 +124,7 @@ const config = {
         path: 'pages/workspaces',
         routeBasePath: 'workspaces',
         breadcrumbs: true,
-        sidebarPath: require.resolve('./sidebars/sidebars-auto.js'),
+        sidebarPath: require.resolve('./sidebars/sidebars-workspaces.js'),
         showLastUpdateAuthor: true,
         showLastUpdateTime: true,
       }),
@@ -137,7 +137,7 @@ const config = {
         path: 'pages/tutorials',
         routeBasePath: 'tutorials',
         breadcrumbs: true,
-        sidebarPath: require.resolve('./sidebars/sidebars-auto.js'),
+        sidebarPath: require.resolve('./sidebars/sidebars-tutorials.js'),
         showLastUpdateAuthor: true,
         showLastUpdateTime: true,
       }),
@@ -198,18 +198,18 @@ const config = {
           {
             title: 'Docs',
             items: [
-              {
-                label: 'Projects',
-                to: '/docs/category/featured-projects',
-              },
+              // {
+              //   label: 'Projects',
+              //   to: '/docs/category/featured-projects',
+              // },
               {
                 label: 'Resources',
                 to: '/resources/intro',
               },
-              {
-                label: 'Tutorials',
-                to: '/docs/category/tutorials',
-              },
+              // {
+              //   label: 'Tutorials',
+              //   to: '/docs/category/tutorials',
+              // },
             ],
           },
           {
