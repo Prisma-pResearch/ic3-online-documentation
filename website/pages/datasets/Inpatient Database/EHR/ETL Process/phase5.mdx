@@ -1,0 +1,402 @@
+---
+sidebar_position: 8
+title: Phase 5 - Variable Generation
+description: Details of Phase 5 pipeline workflow
+---
+import Image from '@theme/IdealImage';
+import lowlevelImg from './Images/lowlevelphase1.png';
+import vars from './Images/phase5_vars_batches.png';
+import vargen from './Images/phase5vargen.png';
+import standardization from './Images/standardization.png';
+import omop_adapter from './Images/omopadapter.png'
+import preprocess from './Images/preprocess.png'
+import comorbidities from './Images/comorbidities.png'
+import labs from './Images/labs.png'
+import residency from './Images/residency.png'
+import meds from './Images/meds.png'
+import generate_cdk_results from './Images/generate_cdk_results.png'
+import ckd_classification from './Images/ckd_classification.png'
+
+## Python Code Details
+Below are the codes involved in this phase for processing healthcare data, focusing on variable generation, residency insights, CKD classification, comorbidity analysis, laboratory data handling, and medication information, each enhancing patient datasets with critical health metrics and insights.
+
+## [variable_generation_for_batches.py](https://github.com/Prisma-pResearch/Variable_Generation/blob/dc3809b12bb4d55af6d25f4997d91badc0baad2e/Python/variable_generation_for_batches.py)
+
+This script streamlines the creation of variables from large datasets by dividing them into manageable batches and processing these in parallel, ensuring both efficiency and accuracy in data analysis tasks.
+
+### Flowchart of variable_generation_for_batches.py
+
+<Image img={vars}/>
+
+#### WORKFLOW
+
+<details>
+<summary>Initialization</summary>
+
+- Import Modules and Functions for data processing
+- Set up initial parameters including identifiers (pid, eid), directory paths (dir_dict), project details (project_name, max_workers), and various column names relevant to the data processing task.
+- Trigger 'get_batches_from_directory' function to get batches and Segments the data into manageable batches for processing.
+
+</details>
+<details>
+<summary>Process Batches</summary>
+
+- For each batch in the batches list:
+    - Check if the batch has been processed.
+        - Look for the existence of success_path.
+        - If Not Processed:
+            - Prepare common_kwargs: Create a dictionary with shared parameters.
+            - Tailor Arguments for Current Batch: Customize the common_kwargs for the specifics of the batch.
+            - Append to kwargs_list: Add the tailored arguments to kwargs_list.
+
+</details>
+
+<details>
+<summary>Parallel Processing</summary>
+
+- Run 'run_function_in_parallel_v2' function with options Either variable_generation_omop_adapter or generate_all_variables to Processes multiple batches simultaneously, leveraging parallel computing for efficiency.
+- Ensures all batches have been processed correctly and verifies the integrity of the process.
+
+</details>
+
+
+## [variable_generation.py](https://github.com/Prisma-pResearch/Variable_Generation/blob/dc3809b12bb4d55af6d25f4997d91badc0baad2e/Python/variable_generation.py)
+
+This script transforms healthcare data into a structured format, generating key variables and ensuring data integrity.
+
+### Flowchart of variable_generation.py
+
+<Image img={vargen}/>
+
+#### WORKFLOW
+
+<details>
+<summary>Check Success File Path</summary>
+
+- Check if success_fp (success file path) exists.
+    - If Exists: The process ends, indicating the task is already completed for this batch.
+    - If Not Exists: The process continues to the next step.
+
+</details>
+<details>
+<summary>Prepare Schedule Data</summary>
+
+- Run load_schedule_data function to load the schedule data into the script.
+- Run check_data_format function to verify the format of the loaded schedule data.
+- Refine the schedule data by applying necessary filters.
+- Run standardize_variables function to standardize various input variables for consistency across the dataset.
+
+</details>
+<details>
+<summary>Variable Generation</summary>
+
+- Run 'generate_residency_variables' function to process data to generate variables related to patient residency.
+- Run 'generate_medication_variables' function to extract and process medication-related data to create relevant variables.
+- Run 'calculate_comorbidity_indices' function to calculate Charlson and Elixhauser comorbidity indices from diagnosis data.
+- Run 'generate_laboratory_variables' function to process laboratory data to extract relevant variables.
+- Run 'generate_ckd_variables' function to generate variables related to Chronic Kidney Disease from CKD-related data.
+
+</details>
+<details>
+<summary>Data cleanup and Column Renaming</summary>
+
+- Perform data cleanup to remove unnecessary columns and rename columns for clarity and consistency across the dataset.
+- Save the processed data to the specified output path.
+- Create a success file path to mark the completion of the variable generation for each batch.
+
+</details>
+
+
+## [variable_standardization.py](https://github.com/Prisma-pResearch/Variable_Generation/blob/dc3809b12bb4d55af6d25f4997d91badc0baad2e/Python/variable_standardization.py)
+
+This script processes healthcare datasets by standardizing and generating key demographic variables, such as age, sex, and BMI, alongside calculating time-to-event metrics.
+
+### Flowchart of variable_standardization.py
+
+<Image img={standardization}/>
+
+#### WORKFLOW
+
+<details>
+<summary>Data Verification and Preparation</summary>
+
+- Check Required Columns in med_df medication dataframe and standardizes the format of the medication dataframe 
+
+</details>
+<details>
+<summary>Demographic Variables Generation</summary>
+
+- Then Processe and transform demographic variables based on the input DataFrame.
+    - Call 'harmonize_categories' function for each categorical variable needing harmonization.
+    - Call '_generate_age' and '_generate_bmi' function for calculating age and BMI, respectively.
+    - Call '_impute_sex' function for sex imputation when missing.
+
+</details>
+<details>
+<summary>Time and Event Calculations</summary>
+
+- Generates variables derived from admission datetime.
+    - Call _generate_time_to_event function for calculating time to surgery.
+    - Call _generate_visit_start_derived_vars function for calculating admission day, month, year, hour, and night admission flag.
+- Combines the processed data with the original source data for further analysis.
+
+</details>
+
+
+## [Omop_adapter.py](https://github.com/Prisma-pResearch/Variable_Generation/blob/dc3809b12bb4d55af6d25f4997d91badc0baad2e/Python/omop_adapter.py)
+
+This script performs integration of healthcare data with the OMOP model, focusing on merging, phenotyping, and generating key variables related to AKI and outcomes.
+
+### Flowchart of Omop_adapter.py
+
+<Image img={omop_adapter}/>
+
+#### WORKFLOW
+
+<details>
+<summary>Check Success File Path</summary>
+
+- The script checks if a success file path exists.
+    - If it exists, the process ends.
+    - If it doesn't exist, the process continues to prepare schedule data.
+
+</details>
+<details>
+<summary>Prepare Schedule Data</summary>
+
+- Load and prepare schedule data for processing.
+- Merge schedule data with AKI CKD status and Save AKI-related information.
+- Save encounter-related information.
+
+</details>
+<details>
+<summary>Check AKI Success File Path</summary>
+
+- Check if AKI success file path exists.
+    - If it exists, proceed to check the outcome success file path.
+    - If it doesn't exist, run AKI phenotyping.
+- Execute AKI phenotyping process.
+- Check if the outcome success file path exists.
+    - If it exists, proceed to generate all variables.
+    - If it doesn't exist, generate outcomes.
+- Process and generate outcome-related data.
+- Generate all necessary variables from the processed data.
+
+</details>
+
+
+## [Preprocess_and_transform.py](https://github.com/Prisma-pResearch/Variable_Generation/blob/dc3809b12bb4d55af6d25f4997d91badc0baad2e/Python/preprocess_and_transform.py)
+
+This script improves healthcare data with AKI status and other critical information, and generates comprehensive variables.
+
+### Flowchart of Preprocess_and_transform.py
+
+<Image img={preprocess}/>
+
+#### WORKFLOW
+
+<details>
+<summary>Check Success File Path</summary>
+
+- The script checks if a success file path exists.
+    - If it exists, the process ends.
+    - If it doesn't exist, the process continues to prepare schedule data.
+
+</details>
+<details>
+<summary>Prepare Schedule Data</summary>
+
+- Load and prepare schedule data for processing.
+- Merge schedule data with AKI CKD status using data manipulation functions.
+- Save AKI-related and encounter-related information to a specified path.
+- Copy other necessary files for processing using file handling utilities.
+
+</details>
+<details>
+<summary>Phenotyping and Outcome Generation</summary>
+
+- If AKI success file path exists, proceed to check the outcome success file path.
+    - If Not Exists: Run AKI phenotyping.
+    - Call Custom AKI phenotyping function to execute AKI phenotyping process.   
+- If the outcome success file path exists, proceed to generate all variables.
+    - If Not Exists: Generate outcomes.
+    - Call Custom outcome generation function to process and generate outcome-related data.
+
+</details>
+<details>
+<summary>Variable Generation and Finalization</summary>
+
+- Variable Generation and Finalization using generate_all_variables.
+- Combine the processed data with the source dataframe for a comprehensive dataset.
+
+</details>
+
+
+## [Residency.py](https://github.com/Prisma-pResearch/Variable_Generation/blob/dc3809b12bb4d55af6d25f4997d91badc0baad2e/Python/Residency.py)
+
+This script processes healthcare data to extract five-digit zip codes, match them with the closest Zip Code Tabulation Area (ZCTA), and enrich the data with residency characteristics and distances from healthcare facilities.
+
+### Flowchart of Residency.py
+
+<Image img={residency}/>
+
+#### WORKFLOW
+
+<details>
+<summary>Extract Five Digit Zipcode</summary>
+
+- The script extracts a five-digit zipcode from the data.
+- finds the closest zipcode in the ZCTA (Zip Code Tabulation Area) table.
+
+</details>
+<details>
+<summary>Add Residency Characteristics</summary>
+
+- Adds residency characteristics based on the identified zipcode.
+- Calculates the distance from the facility to the identified zipcode.
+
+</details>
+
+## [Ckd_result.py](https://github.com/Prisma-pResearch/Variable_Generation/blob/dc3809b12bb4d55af6d25f4997d91badc0baad2e/Python/ckd_result.py)
+
+This script evaluates Chronic Kidney Disease (CKD) data, classifying cases based on specific criteria and generating results through comprehensive data processing, including eGFR calculation, database operations, and CKD reclassification, to enhance patient data with critical health insights. It involves two major functions: 'CKD_classification' and 'generate_cdk_results' and their flowchart can be found below. 
+
+### Flowchart of CKD_classification
+
+<Image img={ckd_classification}/>
+
+#### WORKFLOW of CKD_classification
+
+<details>
+<summary>Check if CKD is Null</summary>
+
+- If the CKD value is null, it proceeds to the next step.
+    - The function returns without any classification.
+- If CKD is not null, it reclassifies the CKD based on predefined criteria.
+
+</details>
+
+### Flowchart of generate_cdk_results
+
+<Image img={generate_cdk_results}/>
+
+#### WORKFLOW of generate_cdk_results
+
+<details>
+<summary>Check if 'egfr' in ckd_df</summary>
+
+- If 'egfr' is not present, it calculates the eGFR.
+- Then it creates a temporary SQLite database in memory.
+
+</details>
+<details>
+<summary>Load DataFrames into Database</summary>
+
+- Loads the CKD DataFrame and another DataFrame into the database.
+- Performs an SQL query to merge and filter the data based on conditions.
+- Sorts, groups, and selects the relevant data.
+
+</details>
+<details>
+<summary>Apply CKD Classification Function</summary>
+
+- Applies the CKD classification function to the data.
+- Fills in missing 'egfr' values with a placeholder.
+- Drops unnecessary columns and renames others for clarity.
+
+</details>
+
+## [Comorbidites.py](https://github.com/Prisma-pResearch/Variable_Generation/blob/dc3809b12bb4d55af6d25f4997d91badc0baad2e/Python/comorbidites.py)
+
+This script processes healthcare data to identify and quantify patient comorbidities, utilizing ICD codes to filter, group, and analyze conditions, ultimately enhancing patient records with valuable insights like the Charlson Comorbidity Index.
+
+### Flowchart of comorbidities.py
+
+<Image img={comorbidities}/>
+
+#### WORKFLOW
+
+<details>
+<summary>Format ICD Code & comorbidities Identification</summary>
+
+- Format the ICD codes in the DataFrame.
+- Filter the diagnosis codes based on certain criteria.
+- Identify comorbidities from the filtered diagnosis codes.
+- Flag the matching comorbidities in the grouped data.
+
+</details>
+<details>
+<summary>Calculate UDN & CCI</summary>
+
+- Calculate the number of unique diagnoses for each patient.
+- Calculate the Charlson Comorbidity Index for each patient.
+- Generate additional columns required for variable generation.
+
+</details>
+
+## [Labs.py](https://github.com/Prisma-pResearch/Variable_Generation/blob/dc3809b12bb4d55af6d25f4997d91badc0baad2e/Python/labs.py)
+
+This script processes laboratory data by cleaning, standardizing, and filtering it based on specific criteria.
+
+### Flowchart of labs.py
+
+<Image img={labs}/>
+
+#### WORKFLOW
+
+<details>
+<summary>Data Validation</summary>
+
+- Check if the DataFrame is empty.
+    - If Empty: The process ends.
+    - If Not Empty: Proceed to the next phase.
+
+</details>
+<details>
+<summary>Data Preparation</summary>
+
+- Standardize the labs data for consistency.
+- Isolate relevant lab data based on predefined criteria.
+- Set up an efficient in-memory database for data handling and import the cleaned and filtered labs data into the database.
+
+</details>
+<details>
+<summary>Data Processing and Output</summary>
+
+- Prepare an output DataFrame for the processed results.
+- Select laboratory variables based on specific criteria.
+- Combine the laboratory data with other relevant datasets.
+
+</details>
+
+## [Meds.py](https://github.com/Prisma-pResearch/Variable_Generation/blob/dc3809b12bb4d55af6d25f4997d91badc0baad2e/Python/meds.py)
+
+This script processes medication data by verifying necessary columns, formatting and filtering based on criteria, and calculating medication counts and nephrotoxic scores, ultimately enriching patient data with detailed medication insights.
+
+### Flowchart of Meds.py
+
+<Image img={meds}/>
+
+#### WORKFLOW
+
+<details>
+<summary>Check Required Columns in med_df</summary>
+
+- Verifies if the necessary columns are present in the medication dataframe (med_df).
+- Formats the med_df dataframe and Filters rows in med_df based on specific criteria.
+- Creates a dataframe for the time interval.
+
+</details>
+<details>
+<summary>Filter Meds and other calculations</summary>
+
+- Filters medications based on the time interval.
+- Drops duplicate rows and converts variable_name to dummy variables.
+- Calculates the number of medications.
+- Calculates the nephrotoxic score.
+- Merges the results with the source dataframe.
+
+</details>
+
+
+

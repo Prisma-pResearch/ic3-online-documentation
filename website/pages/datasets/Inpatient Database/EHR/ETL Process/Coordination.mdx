@@ -1,0 +1,80 @@
+---
+sidebar_position: 4
+title: Coordination
+description: Details of Phase 3 pipeline workflow
+---
+import Image from '@theme/IdealImage';
+import seqImg from './Images/phase1seq.png';
+
+
+Below is the sequence flowchart to show the hierarchy of flow between files of Coordinator and Phase 1 
+
+<Image img={seqImg}/>
+
+## Python Code Details
+Below are the codes involved in this phase for initiating the process by triggering multiple phases in sequence with relevant arguments.
+
+## [Run_pipeline.py](https://github.com/Prisma-pResearch/IDR_Data_Pipeline/blob/1db73b7e4f3110d55e60388c0f4344b716ce155b/Python/Coordination/run_pipeline_v2.py)
+
+This file contains the run_IDR_pipeline function, which is called from the main.py file. 
+
+#### WORKFLOW
+
+<details>
+<summary>Trigger run_IDR_pipeline function</summary>
+
+This script is the entry point for the entire code. The run_IDR_pipeline function is run with necessary arguments. This function is responsible for running the entire pipeline, including setting up the project, running phases I through III, coordinating Phase IV, and generating variables for batches. 
+
+</details>
+
+## [phase_I_through_III_coordinator.py](https://github.com/Prisma-pResearch/IDR_Data_Pipeline/blob/1db73b7e4f3110d55e60388c0f4344b716ce155b/Python/Coordination/phase_I_through_III_coordinator.py)
+
+This script handles the structured process for executing a three-phase data operation, starting with initialization and conditional checks for pre-completion. This file contains functions related to the coordination of phases I, II, and III of the pipeline. It includes functions like run_phase_I, run_phase_II_and_III, and run_phases_I_II_III, which handle various tasks such as creating lookup tables, cleaning files, labeling files with merged IDs, and running these phases in parallel.
+
+#### WORKFLOW
+
+<details>
+<summary>Initialization</summary>
+
+- Import required modules and tools
+- Load custom modules/functions necessary for coordinating phases I, II, and III.
+- Decision: Check if merging has already been completed. If Completed then Skip to the end; Else, Proceed to "Retrieve Batches."
+
+</details>
+<details>
+<summary>Retrieve Batches</summary>
+
+- Get batches from the directory using get_batches_from_directory function.
+- Execute run_phase_I function
+
+</details>
+
+<details>
+<summary>Execute run_phase_I function</summary>
+
+This function internally calls the function (or functions) associated with Phase I processing that likely involves data cleaning, processing, and saving operations. Any errors or conditions will be logged and handled appropriately.
+</details>
+
+<details>
+<summary>Execute run_phase_II function</summary>
+
+This function internally calls the function (or functions) associated with Phase II processing that include more specific data transformations, validations, etc. Any errors or conditions will be logged and handled appropriately.
+</details>
+
+<details>
+<summary>Execute run_phase_III function</summary>
+
+This function internally Calls the function (or functions) associated with with Phase III processing that handles data refining, aggregations, and other operations. Any errors or conditions will be logged and handled appropriately.
+
+</details>
+
+<details>
+<summary>Ensure Completion Status of all Phases</summary>
+
+After the completion of execution of all the above functions, this decision check will ensure the completion status of all phases.
+
+- If all Phases (I, II, III) are complete then it will write a success file indicating successful completion of all phases.
+- If any phase is incomplete or encountered errors then it will log specific errors or issues related to the failed phase and exit without writing the success file.
+ 
+</details>
+
