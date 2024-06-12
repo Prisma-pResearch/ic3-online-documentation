@@ -154,12 +154,7 @@ const config = {
           src: 'img/logo.png',
         },
         items: [
-          // {
-          //   type: 'doc',
-          //   docId: 'intro',
-          //   position: 'left',
-          //   label: 'Docs',
-          // },
+
           {
             to: '/datasets/intro',
             label: 'Datasets',
