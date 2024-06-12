@@ -1,0 +1,38 @@
+## ic3-online-documentation\resources\OMOP\Introduction.mdx
+ <Timeline.Item>
+        Start OMOP mapping projects
+    </Timeline.Item>
+    <Timeline.Item color="green" label="2021-10-30">
+      Solve intial manual mapping
+    </Timeline.Item>
+    <Timeline.Item
+      dot={
+        <ClockCircleOutlined
+          style={{
+            fontSize: '16px',
+          }}
+        />
+      }
+    >
+      Mapping with RabbitInHat and create mapping documentation
+    </Timeline.Item>
+    <Timeline.Item color="green" label="2022-11-15">
+    Finish IC3 customized mapping
+    </Timeline.Item>
+    <Timeline.Item
+        dot={
+        <ClockCircleOutlined
+          style={{
+            fontSize: '16px',
+          }}
+        />
+      }
+    >
+      Create and testing automatic python pipelines
+      </Timeline.Item>
+    <Timeline.Item label="2023-02-01" color="orange">
+      Technical testing with more datasets
+    </Timeline.Item>
+    <Timeline.Item label="2023-03-01" color="purple">
+      Start Epic Flowsheet mapping with UF IDR
+    </Timeline.Item>
