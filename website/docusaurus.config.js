@@ -154,25 +154,42 @@ const config = {
           src: 'img/logo.png',
         },
         items: [
-
           {
-            to: '/datasets/intro',
+            to: 'datasets/category/datasets',
             label: 'Datasets',
             position: 'left',
             activeBaseRegex: `/datasets/`,
           },
           {
-            to: 'workspaces/HiPerGator',
-            label: 'Workspaces',
+            to: '/resources/intro',
+            label: 'Resources',
             position: 'left',
-            activeBaseRegex: `/workspaces/`,
+            activeBaseRegex: `/resources/`,
           },
           {
-            to: '/tutorials/intro',
-            label: 'Tutorials',
+            to: '/project/intro',
+            label: 'Project',
             position: 'left',
-            activeBaseRegex: `/tutorials/`,
+            activeBaseRegex: `/project/`,
           },
+          {
+            to: '/about/intro',
+            label: 'About',
+            position: 'left',
+            activeBaseRegex: `/about/`,
+          },
+          // {
+          //   to: 'workspaces/HiPerGator',
+          //   label: 'Workspaces',
+          //   position: 'left',
+          //   activeBaseRegex: `/workspaces/`,
+          // },
+          // {
+          //   to: '/tutorials/intro',
+          //   label: 'Tutorials',
+          //   position: 'left',
+          //   activeBaseRegex: `/tutorials/`,
+          // },
          
           {
             type: 'search',
@@ -201,7 +218,7 @@ const config = {
                 label: 'Resources',
                 to: '/resources/intro',
               },
-              // {
+              // {gitg
               //   label: 'Tutorials',
               //   to: '/docs/category/tutorials',
               // },
@@ -216,7 +233,6 @@ const config = {
                   onMouseOver="this.style.color='#005494'"
                   onMouseOut="this.style.color='#FFF'"
                  >UF Health</a></div>`
-
               },
               {
                 html:
@@ -227,6 +243,24 @@ const config = {
 
               },
 
+            ],
+          },
+          {
+            title: 'Links',
+            items: [
+              {
+                label: 'Links',
+                to: '/links',
+              },
+            ],
+          },
+          {
+            title: 'Contacts',
+            items: [
+              {
+                label: 'Contacts',
+                to: '/contacts',
+              },
             ],
           },
           {
