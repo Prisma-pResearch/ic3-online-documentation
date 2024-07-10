@@ -120,9 +120,9 @@ const config = {
       'content-docs',
       /** @type {import('@docusaurus/plugin-content-docs').Options} */
       ({
-        id: 'workspaces',
-        path: 'pages/workspaces',
-        routeBasePath: 'workspaces',
+        id: 'projects',
+        path: 'pages/projects',
+        routeBasePath: 'projects',
         breadcrumbs: true,
         sidebarPath: require.resolve('./sidebars/sidebars-workspaces.js'),
         showLastUpdateAuthor: true,
@@ -133,9 +133,9 @@ const config = {
       'content-docs',
       /** @type {import('@docusaurus/plugin-content-docs').Options} */
       ({
-        id: 'tutorials',
-        path: 'pages/tutorials',
-        routeBasePath: 'tutorials',
+        id: 'about',
+        path: 'pages/about',
+        routeBasePath: 'about',
         breadcrumbs: true,
         sidebarPath: require.resolve('./sidebars/sidebars-tutorials.js'),
         showLastUpdateAuthor: true,
@@ -155,7 +155,7 @@ const config = {
         },
         items: [
           {
-            to: 'datasets/category/datasets',
+            to: '/datasets/dashboard',
             label: 'Datasets',
             position: 'left',
             activeBaseRegex: `/datasets/`,
@@ -167,10 +167,10 @@ const config = {
             activeBaseRegex: `/resources/`,
           },
           {
-            to: '/project/intro',
-            label: 'Project',
+            to: '/projects/intro',
+            label: 'Projects',
             position: 'left',
-            activeBaseRegex: `/project/`,
+            activeBaseRegex: `/projects/`,
           },
           {
             to: '/about/intro',
@@ -245,33 +245,8 @@ const config = {
 
             ],
           },
-          {
-            title: 'Links',
-            items: [
-              {
-                label: 'Links',
-                to: '/links',
-              },
-            ],
-          },
-          {
-            title: 'Contacts',
-            items: [
-              {
-                label: 'Contacts',
-                to: '/contacts',
-              },
-            ],
-          },
-          {
-            title: 'More',
-            items: [
-              {
-                label: 'Blog',
-                to: '/blog',
-              },
-            ],
-          },
+         
+          
         ],
         logo: {
           alt: 'ic3 logo',
