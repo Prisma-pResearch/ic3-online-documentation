@@ -5,7 +5,7 @@ on:
     branches:
       - main
     paths:
-      - 'websites/**'
+      - 'website/**'
 
 jobs:
   test-deploy:
@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: websites
+        working-directory: website
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
@@ -23,6 +23,6 @@ jobs:
       # Install and build Docusaurus website
       - name: Build site
         run: |
-          # cd websites
+          # cd website
           npm install
           npm run build

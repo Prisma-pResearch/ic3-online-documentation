@@ -101,6 +101,8 @@ const config = {
         sidebarPath: require.resolve('./sidebars/sidebarResources.js'),
         showLastUpdateAuthor: true,
         showLastUpdateTime: true,
+        editUrl:
+            'https://github.com/Prisma-pResearch/ic3-online-documentation/edit/v3-dev/website/', 
       }),
     ],
     [
@@ -114,32 +116,38 @@ const config = {
         sidebarPath: require.resolve('./sidebars/sidebars-datasets.js'),
         showLastUpdateAuthor: true,
         showLastUpdateTime: true,
+        editUrl:
+            'https://github.com/Prisma-pResearch/ic3-online-documentation/edit/v3-dev/website/', 
       }),
     ],
     [
       'content-docs',
       /** @type {import('@docusaurus/plugin-content-docs').Options} */
       ({
-        id: 'workspaces',
-        path: 'pages/workspaces',
-        routeBasePath: 'workspaces',
+        id: 'projects',
+        path: 'pages/projects',
+        routeBasePath: 'projects',
         breadcrumbs: true,
         sidebarPath: require.resolve('./sidebars/sidebars-workspaces.js'),
         showLastUpdateAuthor: true,
         showLastUpdateTime: true,
+        editUrl:
+        'https://github.com/Prisma-pResearch/ic3-online-documentation/edit/v3-dev/website/', 
       }),
     ],
     [
       'content-docs',
       /** @type {import('@docusaurus/plugin-content-docs').Options} */
       ({
-        id: 'tutorials',
-        path: 'pages/tutorials',
-        routeBasePath: 'tutorials',
+        id: 'about',
+        path: 'pages/about',
+        routeBasePath: 'about',
         breadcrumbs: true,
         sidebarPath: require.resolve('./sidebars/sidebars-tutorials.js'),
         showLastUpdateAuthor: true,
         showLastUpdateTime: true,
+        editUrl:
+        'https://github.com/Prisma-pResearch/ic3-online-documentation/edit/v3-dev/website/', 
       }),
     ],
   ],
@@ -154,25 +162,42 @@ const config = {
           src: 'img/logo.png',
         },
         items: [
-
           {
-            to: '/datasets/intro',
+            to: '/datasets/dashboard',
             label: 'Datasets',
             position: 'left',
             activeBaseRegex: `/datasets/`,
           },
           {
-            to: 'workspaces/HiPerGator',
-            label: 'Workspaces',
+            to: '/resources/intro',
+            label: 'Resources',
             position: 'left',
-            activeBaseRegex: `/workspaces/`,
+            activeBaseRegex: `/resources/`,
           },
           {
-            to: '/tutorials/intro',
-            label: 'Tutorials',
+            to: '/projects/intro',
+            label: 'Projects',
             position: 'left',
-            activeBaseRegex: `/tutorials/`,
+            activeBaseRegex: `/projects/`,
           },
+          {
+            to: '/about/intro',
+            label: 'About',
+            position: 'left',
+            activeBaseRegex: `/about/`,
+          },
+          // {
+          //   to: 'workspaces/HiPerGator',
+          //   label: 'Workspaces',
+          //   position: 'left',
+          //   activeBaseRegex: `/workspaces/`,
+          // },
+          // {
+          //   to: '/tutorials/intro',
+          //   label: 'Tutorials',
+          //   position: 'left',
+          //   activeBaseRegex: `/tutorials/`,
+          // },
          
           {
             type: 'search',
@@ -201,7 +226,7 @@ const config = {
                 label: 'Resources',
                 to: '/resources/intro',
               },
-              // {
+              // {gitg
               //   label: 'Tutorials',
               //   to: '/docs/category/tutorials',
               // },
@@ -216,7 +241,6 @@ const config = {
                   onMouseOver="this.style.color='#005494'"
                   onMouseOut="this.style.color='#FFF'"
                  >UF Health</a></div>`
-
               },
               {
                 html:
@@ -229,15 +253,8 @@ const config = {
 
             ],
           },
-          {
-            title: 'More',
-            items: [
-              {
-                label: 'Blog',
-                to: '/blog',
-              },
-            ],
-          },
+         
+          
         ],
         logo: {
           alt: 'ic3 logo',
