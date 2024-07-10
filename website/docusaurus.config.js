@@ -101,6 +101,8 @@ const config = {
         sidebarPath: require.resolve('./sidebars/sidebarResources.js'),
         showLastUpdateAuthor: true,
         showLastUpdateTime: true,
+        editUrl:
+            'https://github.com/Prisma-pResearch/ic3-online-documentation/edit/v3-dev/website/', 
       }),
     ],
     [
@@ -114,6 +116,8 @@ const config = {
         sidebarPath: require.resolve('./sidebars/sidebars-datasets.js'),
         showLastUpdateAuthor: true,
         showLastUpdateTime: true,
+        editUrl:
+            'https://github.com/Prisma-pResearch/ic3-online-documentation/edit/v3-dev/website/', 
       }),
     ],
     [
