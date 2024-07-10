@@ -19,7 +19,8 @@ This script calculates the Sequential Organ Failure Assessment (SOFA) score, whi
 
 <details>
 <summary>
-Data Preparation and Extraction</summary>
+Data Preparation and Extraction
+</summary>
  The script imports necessary libraries and defines functions to process and extract relevant clinical data. This data includes blood pressure measurements, Glasgow Coma Scale (GCS) scores, respiratory data, laboratory results, and medication information.
 </details>
 <details>
@@ -55,13 +56,15 @@ This script calculates SOFA (Sequential Organ Failure Assessment) scores using d
 #### WORKFLOW
 <details>
 <summary>
-Database Connection and Data Retrieval</summary>
+Database Connection and Data Retrieval
+</summary>
 The script connects to an OMOP database using SQL queries. It retrieves relevant clinical data required for SOFA score calculation. This includes data from various tables like visit_occurrence, measurement, drug_exposure, and device_exposure.
 </details>
 
 <details>
 <summary>
-Data Preparation and Processing</summary>
+Data Preparation and Processing
+</summary>
 The script processes the retrieved data to prepare it for SOFA score calculation. This involves creating temporary tables, checking and creating lookup tables, and ensuring data consistency and correctness.
 </details>
 <details>
