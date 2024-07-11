@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkic_3_online_documentation=self.webpackChunkic_3_online_documentation||[]).push([[4105],{63283:e=>{e.exports=JSON.parse('{"permalink":"/ic3-online-documentation/blog","page":1,"postsPerPage":6,"totalPages":1,"totalCount":1,"blogDescription":"Innovative ideas and discovers","blogTitle":"Innovative Ideas!"}')}}]);

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://Chesterguan.github.io/ic3-online-documentation/blog</id>
+    <title>Intelligent Critical Care Center Online Documentation Blog</title>
+    <updated>2024-07-11T18:48:24.000Z</updated>
+    <generator>https://github.com/jpmonette/feed</generator>
+    <link rel="alternate" href="https://Chesterguan.github.io/ic3-online-documentation/blog"/>
+    <subtitle>Intelligent Critical Care Center Online Documentation Blog</subtitle>
+    <icon>https://Chesterguan.github.io/ic3-online-documentation/img/favicon.ico</icon>
+    <entry>
+        <title type="html"><![CDATA[Documentation Tutorial]]></title>
+        <id>https://Chesterguan.github.io/ic3-online-documentation/blog/intro</id>
+        <link href="https://Chesterguan.github.io/ic3-online-documentation/blog/intro"/>
+        <updated>2024-07-11T18:48:24.000Z</updated>
+    </entry>
+</feed>
