@@ -215,23 +215,23 @@ const config = {
       footer: {
         style: 'dark',
         links: [
-          {
-            title: 'Docs',
-            items: [
-              // {
-              //   label: 'Projects',
-              //   to: '/docs/category/featured-projects',
-              // },
-              {
-                label: 'Resources',
-                to: '/resources/intro',
-              },
-              // {gitg
-              //   label: 'Tutorials',
-              //   to: '/docs/category/tutorials',
-              // },
-            ],
-          },
+          // {
+          //   title: 'Docs',
+          //   items: [
+          //     // {
+          //     //   label: 'Projects',
+          //     //   to: '/docs/category/featured-projects',
+          //     // },
+          //     {
+          //       label: 'Resources',
+          //       to: '/resources/intro',
+          //     },
+          //     // {gitg
+          //     //   label: 'Tutorials',
+          //     //   to: '/docs/category/tutorials',
+          //     // },
+          //   ],
+          // },
           {
             title: 'Community',
             items: [
@@ -250,7 +250,30 @@ const config = {
                  >Twitter</a></div>`
 
               },
+              {
+                html:
+                  `<div > 
+                  <div >Contacts </div>
+                  <div > </div>
+                   </div>`
 
+              },
+
+            ],
+            
+          },
+
+                    {
+            title: 'Contacts',
+            items: [
+              {
+                html:
+                  `<div > 
+                  <div >Email: PrismaP@ic3.ufl.edu </div>
+                  <div >Phone: xxx-xxx-xxxx </div>
+                   </div>`
+
+              },
             ],
           },
          
