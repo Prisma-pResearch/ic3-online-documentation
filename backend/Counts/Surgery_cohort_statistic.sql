@@ -1,4 +1,8 @@
 --Surgery statistic number for inpatient database.
+--Num_of_surgeries 636907
+--Num_of_encounters 285339
+--Num_of_patients 191404
+
 use IC3_INPATIENT_PIPELINE_2024;
 WITH partitioned AS (
     SELECT
@@ -46,7 +50,13 @@ FROM
 select count(distinct visit_detail_id) as Num_of_surgeries, count(distinct visit_occurrence_id)as Num_of_encounters, count(distinct person_id) as Num_of_patients
 from result
 
+
+	
 --Surgery statistic number for idealist database.
+--Num_of_surgeries 232805
+--Num_of_encounters 187947
+--Num_of_patients 136648
+	
 use IDEALIST;
 with partitioned as (
 SELECT -- TOP 400
