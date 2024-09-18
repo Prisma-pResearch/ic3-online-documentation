@@ -7,14 +7,14 @@ import { Col, Row, Statistic, Card, Divider } from 'antd';
 // TODO: implement the codes to fetch statistics from Database through Next/Node backend
 
 const FeatureList=[
-    {
+   {
         title:'IDEALIST',
         description:'Surgical Patients admitted to UF Health (GNV+JAX)',
-        updatedTime: '2022/11/03', 
-        timeRange: '2012/01/01 - 2020/10/15',
-        numPatients:254979,
-        numEncounters:498769,
-        numSurgeries:545824,
+        updatedTime: '2024/07/30', 
+        timeRange: '2012/01/01 - 2023/07/01',
+        numPatients:136648,
+        numEncounters:187947,
+        numSurgeries:232805,
         isOMOP:'Enabled',
         link: '/ic3-online-documentation/docs/datasets/IDEALIST'
     },
@@ -30,23 +30,23 @@ const FeatureList=[
         link:'/ic3-online-documentation/docs/datasets/AKIEPIC2',
     },
     {
-        title:'Inpatient Database',
+        title:'UF INPATIENT DATABASE',
         description:'Hospitalized Patients admitted to UF Health (All Sites)', 
-        updatedTime: '2023/09/15', 
-        timeRange: '2012/01/01-2023/07/31',
-        numPatients:351022,
-        numEncounters:14743767,
-        numSurgeries: 'in processing',
+        updatedTime: '2024/06/07', 
+        timeRange: '2012/01/01-2023/12/31',
+        numPatients:191404,
+        numEncounters:285339,
+        numSurgeries: 636907,
         isOMOP:'Enabled',
         link:'/ic3-online-documentation/docs/datasets/InpatientDatabase'
     },
     {
         title:'ChoRUS',
         description:'Selected ICU Patients from Inpatient Database',
-        updatedTime: '2023/11/15', 
+        updatedTime: '2024/07/30', 
         timeRange: 'Dynamic selection',
-        numPatients:1263,
-        numEncounters:1316,
+        numPatients:4000,
+        numEncounters:5123,
         numSurgeries: 'N/A',
         isOMOP:'Enabled',
         link:'/ic3-online-documentation/docs/datasets/Chorus'
