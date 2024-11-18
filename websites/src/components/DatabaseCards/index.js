@@ -11,9 +11,9 @@ const FeatureList=[
         title:'IDEALIST',
         description:'Surgical Patients admitted to UF Health (GNV+JAX)',
         updatedTime: '2024/07/30', 
-        timeRange: '2012/01/01 - 2023/07/01',
-        numPatients:136648,
-        numEncounters:187947,
+        timeRange: '2012/01/01 - 2021/04/30',
+        numPatients:115954,
+        numEncounters:156564,
         numSurgeries:232805,
         isOMOP:'Enabled',
         link: '/ic3-online-documentation/docs/datasets/IDEALIST'
