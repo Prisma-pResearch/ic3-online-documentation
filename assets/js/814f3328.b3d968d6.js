@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkic_3_online_document=self.webpackChunkic_3_online_document||[]).push([[2535],{5641:e=>{e.exports=JSON.parse('{"title":"Latest posts","items":[{"title":"Tutorial for beginner","permalink":"/ic3-online-documentation/blog/TutorialForBeginner"}]}')}}]);

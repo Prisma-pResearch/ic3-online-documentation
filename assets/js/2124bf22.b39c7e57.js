@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkic_3_online_document=self.webpackChunkic_3_online_document||[]).push([[9793],{6701:e=>{e.exports=JSON.parse('{"permalink":"/ic3-online-documentation/blog/tags/beginner","page":1,"postsPerPage":6,"totalPages":1,"totalCount":1,"blogDescription":"Innovative ideas and discovers","blogTitle":"Innovative Ideas!"}')}}]);

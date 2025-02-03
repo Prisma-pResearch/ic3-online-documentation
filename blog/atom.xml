@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://Chesterguan.github.io/ic3-online-documentation/blog</id>
+    <title>Intelligent Critical Care Center Online Documentation Blog</title>
+    <updated>2023-01-02T00:00:00.000Z</updated>
+    <generator>https://github.com/jpmonette/feed</generator>
+    <link rel="alternate" href="https://Chesterguan.github.io/ic3-online-documentation/blog"/>
+    <subtitle>Intelligent Critical Care Center Online Documentation Blog</subtitle>
+    <icon>https://Chesterguan.github.io/ic3-online-documentation/img/favicon.ico</icon>
+    <entry>
+        <title type="html"><![CDATA[Tutorial for beginner]]></title>
+        <id>https://Chesterguan.github.io/ic3-online-documentation/blog/TutorialForBeginner</id>
+        <link href="https://Chesterguan.github.io/ic3-online-documentation/blog/TutorialForBeginner"/>
+        <updated>2023-01-02T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Hi There! Welcome to Intelligent Critical Care Center.]]></summary>
+        <content type="html"><![CDATA[<p>Hi There! Welcome to <strong>Intelligent Critical Care Center</strong>. </p><p><img loading="lazy" alt="AIimage" src="/ic3-online-documentation/assets/images/ai-medicine-e94097f6edd153b27a0be3789cc65adc.jpg" width="1280" height="720" class="img_ev3q"></p><p>This blog will walk you through the resources and workflows provided by IC<sup>3</sup> center and smooth your onboarding process. </p><h3 class="anchor anchorWithStickyNavbar_LWe7" id="on-boarding">On Boarding<a href="#on-boarding" class="hash-link" aria-label="Direct link to On Boarding" title="Direct link to On Boarding">​</a></h3><p>If you are not familiar with our organization, please visit our <a href="https://ic3.center.ufl.edu" target="_blank" rel="noopener noreferrer">website</a> firstly. </p><p>IC<sup>3</sup> is a big organization and involves many researchers and roles. Except reporting and meeting with your supervisor routinely, you need to understand about the rules.</p><ul><li>If you are working with <a href="https://it.ufl.edu/it-policies/information-security/related-standards-and-documents/data-classification-guidelines/" target="_blank" rel="noopener noreferrer">Restricted Data</a>, you need to be added into IRBs related to the project in advance. Please contact with your supervisor and refer to the document <a href="/ic3-online-documentation/docs/tutorials/For PI/Accesses">here</a>.</li></ul><p>The general tasks assignments for each cores are shown below:</p><p><img loading="lazy" alt="Core Assignments" src="/ic3-online-documentation/assets/images/core arrangements-99c20dc9cc0c4b21677a1b4105179e69.jpg" width="1280" height="720" class="img_ev3q"></p>]]></content>
+        <author>
+            <name>Ziyuan Guan</name>
+            <uri>https://chesterguan.github.io/</uri>
+        </author>
+        <category label="IC3" term="IC3"/>
+        <category label="Tutorial" term="Tutorial"/>
+        <category label="Beginner" term="Beginner"/>
+    </entry>
+</feed>
